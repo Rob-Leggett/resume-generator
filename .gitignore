@@ -1,0 +1,4 @@
+/.idea/
+/resume-generator-ui/node_modules/
+/resume-generator-ui/yarn.lock
+/resume-generator-ui/build/

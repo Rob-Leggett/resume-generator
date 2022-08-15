@@ -1,0 +1,12 @@
+/* app styles */
+[data-theme='modern'] .flex-container {
+    display: flex;
+}
+
+[data-theme='modern'] .flex-container .left-panel {
+    width: 80%;
+}
+
+[data-theme='modern'] .flex-container .right-panel {
+    width: 20%;
+}
