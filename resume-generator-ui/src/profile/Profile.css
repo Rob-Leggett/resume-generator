@@ -3,6 +3,7 @@
 
 }
 
-[data-theme='modern'] .profile-container .profile-msg {
-
+[data-theme='modern'] .profile-img {
+    width: 350px;
+    height: 350px;
 }

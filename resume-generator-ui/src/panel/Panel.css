@@ -1,1 +1,6 @@
 /* panel styles */
+[data-theme='modern'] .flex-container .left-panel .panel-container {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 100%;
+}

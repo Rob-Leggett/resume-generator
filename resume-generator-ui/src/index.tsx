@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configuration from './constants';
 import './Index.css';
 
 const rootElement = document.getElementById("root")
@@ -16,9 +17,11 @@ const root = createRoot(rootElement);
 root.render(
    <React.StrictMode>
      <Auth0Provider
-       domain="YOUR_DOMAIN"
-       clientId="YOUR_CLIENT_ID"
+       domain={configuration.auth0.domain}
+       clientId={configuration.auth0.clientId}
        redirectUri={window.location.origin}
+       audience={configuration.auth0.audience}
+       scope={configuration.auth0.scopes}
      >
       <App />
      </Auth0Provider>

@@ -1,9 +1,10 @@
+import { ReactFCWithChildren } from '../react';
 import './Panel.css';
 
-const PanelComponent = () => {
+const PanelComponent: ReactFCWithChildren = ({children}) => {
   return (
     <div className="panel-container">
-      <p>Panel</p>
+      {children}
     </div>
   )
 }

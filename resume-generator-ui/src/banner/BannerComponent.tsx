@@ -1,12 +1,10 @@
-import React from 'react';
-import ProfileComponent from '../profile/ProfileComponent';
-import ThemeChangerComponent from '../theme/ThemeChangerComponent';
+import { ReactFCWithChildren } from '../react';
+import './Banner.css';
 
-const BannerComponent = () => {
+const BannerComponent: ReactFCWithChildren = ({children}) => {
   return (
     <div className="flex-container banner-container">
-      <ThemeChangerComponent/>
-      <ProfileComponent />
+      {children}
     </div>
   )
 }

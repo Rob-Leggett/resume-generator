@@ -1,0 +1,5 @@
+/* banner styles */
+[data-theme='modern'] .banner-container {
+    justify-content: space-between;
+    width: 100%;
+}

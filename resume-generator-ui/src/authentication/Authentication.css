@@ -1,0 +1,11 @@
+/* authentication styles */
+[data-theme='modern'] .authentication-container {
+
+}
+
+[data-theme='modern'] .authentication-container .authentication-msg {
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    padding-right: 10px;
+}
