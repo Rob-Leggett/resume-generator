@@ -1,9 +1,26 @@
 /* profile styles */
 [data-theme='modern'] .profile-container {
-
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
 }
 
-[data-theme='modern'] .profile-img {
-    width: 350px;
-    height: 350px;
+[data-theme='modern'] .profile-container .profile-img {
+    width: 320px;
+    height: 320px;
+}
+
+[data-theme='modern'] .profile-container .profile-data {
+    display: flex;
+    align-items: baseline;
+    padding-left: 30px;
+    font-size: smaller;
+}
+
+[data-theme='modern'] .profile-container .profile-data .profile-item {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+[data-theme='modern'] .profile-container .profile-data .profile-link {
+    text-decoration: none;
+    color: mediumblue;
 }

@@ -10,6 +10,11 @@ interface UserMetadata {
   linkedin_url?: string
 }
 
+interface Profile {
+  label: string,
+  value: string | undefined
+}
+
 const ProfileComponent = () => {
   const { user, isLoading, error, getAccessTokenSilently } = useAuth0<User>();
   const [userMetadata, setUserMetadata] = useState<UserMetadata>();
@@ -43,6 +48,24 @@ const ProfileComponent = () => {
     getUserMetadata();
   }, [getAccessTokenSilently, user]);
 
+  const addProfileData = (profile: Profile) => {
+    return (
+    <div className="profile-data">
+      <p className="profile-item">{profile.label}</p>
+      <p className="profile-item">{profile.value}</p>
+    </div>
+    );
+  }
+
+  const addProfileLink = (profile: Profile) => {
+    return (
+      <div className="profile-data">
+        <p className="profile-item">{profile.label}</p>
+        <a className="profile-link" href={profile.value}>{profile.value}</a>
+      </div>
+    );
+  }
+
   if (isLoading) {
     return (<div className="loading">Loading ...</div>);
   }
@@ -55,26 +78,34 @@ const ProfileComponent = () => {
     if (user) {
       if (userMetadata) {
         return (
-          <div>
+          <div className="profile-container">
             <img className="profile-img" src={user.picture} alt={user.name}/>
-            <p>Email: {user.email}</p>
-            <p>Mobile: {userMetadata.mobile}</p>
-            <p>Blog: {userMetadata.blog_url}</p>
-            <p>GitHub: {userMetadata.github_url}</p>
-            <p>LinkedIn: {userMetadata.linkedin_url}</p>
+
+            { addProfileData({label: "Email:", value: user.email}) }
+
+            { addProfileData({label: "Mobile:", value: userMetadata.mobile}) }
+
+            { addProfileLink({label: "Blog:", value: userMetadata.blog_url}) }
+
+            { addProfileLink({label: "GitHub:", value: userMetadata.github_url}) }
+
+            { addProfileLink({label: "LinkedIn:", value: userMetadata.linkedin_url}) }
+
           </div>
         );
       } else {
         return (
-          <div>
+          <div className="profile-container">
             <img className="profile-img" src={user.picture} alt={user.name}/>
-            <p>Email: {user.email}</p>
+
+            { addProfileData({label: "Email:", value: user.email}) }
+
           </div>
         );
       }
     }
 
-    return (<div></div>)
+    return (<div className="profile-container"></div>)
   }
 
   return retrieveProfile();

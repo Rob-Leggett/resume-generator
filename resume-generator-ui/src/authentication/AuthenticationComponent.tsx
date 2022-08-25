@@ -12,18 +12,18 @@ const AuthenticationComponent = () => {
     return (<div className="error">Oops... {error.message}</div>);
   }
 
-  function loginProfile() {
+  function loginUser() {
     return (
-      <div className="profile-container">
+      <div className="authentication-container">
         <button className="button" onClick={loginWithRedirect}>Log in</button>
       </div>
     );
   }
 
-  function logoutProfile() {
+  function logoutUser() {
     return (
-      <div className="profile-container">
-        <span className="profile-msg">Hello {user ? user.name : 'User'}</span>
+      <div className="authentication-container">
+        <span className="authentication-msg">Hello {user ? user.name : 'User'}</span>
         <button className="button" onClick={() => logout({returnTo: window.location.origin})}>
           Log out
         </button>
@@ -31,7 +31,7 @@ const AuthenticationComponent = () => {
     );
   }
 
-  return isAuthenticated ? logoutProfile() : loginProfile();
+  return isAuthenticated ? logoutUser() : loginUser();
 };
 
 export default AuthenticationComponent;
