@@ -52,7 +52,7 @@ const ProfileComponent = () => {
     return (
     <div className="profile-data">
       <p className="profile-item">{profile.label}</p>
-      <p className="profile-item">{profile.value}</p>
+      <p className="profile-item spacer">{profile.value}</p>
     </div>
     );
   }
@@ -61,7 +61,7 @@ const ProfileComponent = () => {
     return (
       <div className="profile-data">
         <p className="profile-item">{profile.label}</p>
-        <a className="profile-link" href={profile.value}>{profile.value}</a>
+        <a className="profile-link spacer" href={profile.value}>{profile.value}</a>
       </div>
     );
   }
@@ -81,6 +81,8 @@ const ProfileComponent = () => {
           <div className="profile-container">
             <img className="profile-img" src={user.picture} alt={user.name}/>
 
+            <p className="profile-header">Contact</p>
+
             { addProfileData({label: "Email:", value: user.email}) }
 
             { addProfileData({label: "Mobile:", value: userMetadata.mobile}) }
@@ -97,6 +99,8 @@ const ProfileComponent = () => {
         return (
           <div className="profile-container">
             <img className="profile-img" src={user.picture} alt={user.name}/>
+
+            <p className="profile-header">Contact</p>
 
             { addProfileData({label: "Email:", value: user.email}) }
 

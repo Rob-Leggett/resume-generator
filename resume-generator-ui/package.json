@@ -4,9 +4,6 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^28.1.6",
     "@types/node": "^18.7.3",
     "@types/react": "^18.0.17",
@@ -40,5 +37,11 @@
       "last 1 chrome version",
       "last 1 firefox version"
     ]
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^5.7.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.4.3"
   }
 }
