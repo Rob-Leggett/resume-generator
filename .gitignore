@@ -2,3 +2,7 @@
 /resume-generator-ui/node_modules/
 /resume-generator-ui/yarn.lock
 /resume-generator-ui/build/
+/resume-generator-api/node_modules/
+/resume-generator-api/.dynamodb/
+/resume-generator-api/.webpack/
+/resume-generator-api/yarn.lock

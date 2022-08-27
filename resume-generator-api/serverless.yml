@@ -1,0 +1,95 @@
+service: resume-generator-api
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-dynamodb-local
+  - serverless-offline
+
+custom:
+  webpack:
+    webpackConfig: ./webpack.config.js
+    includeModules: true
+  serverless-offline:
+    httpPort: 3003
+  dynamodb:
+    start:
+      port: 5001
+      inMemory: true
+      migrate: true
+    stages:
+      - dev
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-east-2'}
+  environment:
+    AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
+    EXPERIENCES_TABLE: Experience-${self:provider.stage}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:DescribeTable
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:DeleteItem
+          Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.EXPERIENCES_TABLE}"
+
+functions:
+  createExperience:
+    handler: src/functions/createExperience.handler
+    events:
+      - http:
+          method: post
+          path: create-experience
+          cors: true
+  getAllExperiences:
+    handler: src/functions/getAllExperiences.handler
+    events:
+      - http:
+          method: get
+          path: get-experiences
+          cors: true
+  getExperience:
+    handler: src/functions/getExperience.handler
+    events:
+      - http:
+          method: get
+          path: get-experience/{experienceId}
+          cors: true
+  updateExperience:
+    handler: src/functions/updateExperience.handler
+    events:
+      - http:
+          method: put
+          path: update-experience/{experienceId}
+          cors: true
+  deleteExperience:
+    handler: src/functions/deleteExperience.handler
+    events:
+      - http:
+          method: delete
+          path: delete-experience/{experienceId}
+          cors: true
+
+resources:
+  Resources:
+    PostsListTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.environment.EXPERIENCES_TABLE}
+        AttributeDefinitions:
+          - AttributeName: experienceId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: experienceId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
