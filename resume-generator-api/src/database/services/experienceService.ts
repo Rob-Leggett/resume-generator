@@ -45,13 +45,16 @@ class ExperienceService {
         TableName: this.tableName,
         Key: { experienceId },
         UpdateExpression:
-          "set #title = :title, description = :description, active = :active",
+          "set #role = :role, from = :from, to = :to, tasks = :tasks, active = :active",
         ExpressionAttributeNames: {
-          "#title": "title",
+          "#to": "to",
+          "#from": "from",
         },
         ExpressionAttributeValues: {
-          ":title": partialExperience.title,
-          ":description": partialExperience.description,
+          ":role": partialExperience.role,
+          ":to": partialExperience.to,
+          ":from": partialExperience.from,
+          ":tasks": partialExperience.tasks,
           ":active": partialExperience.active,
         },
         ReturnValues: "ALL_NEW",

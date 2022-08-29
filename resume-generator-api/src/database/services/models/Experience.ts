@@ -1,7 +1,9 @@
 interface Experience {
   experienceId: string;
-  title: string;
-  description: string;
+  role: string;
+  from: string;
+  to: string;
+  tasks: string[];
   active: boolean;
   createdAt: string;
 }

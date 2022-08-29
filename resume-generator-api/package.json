@@ -4,8 +4,8 @@
   "private": true,
   "main": "handler.ts",
   "scripts": {
-    "prepare":"sls dynamodb install",
-    "start": "sls offline start",
+    "prepare:local":"sls dynamodb install",
+    "start:local": "sls offline start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

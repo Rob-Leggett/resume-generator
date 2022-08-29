@@ -24,7 +24,7 @@ provider:
   name: aws
   runtime: nodejs16.x
   stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-2'}
+  region: ${opt:region, 'ap-southeast-2'}
   environment:
     AWS_NODEJS_CONNECTION_REUSE_ENABLED: 1
     EXPERIENCES_TABLE: Experience-${self:provider.stage}
@@ -80,7 +80,7 @@ functions:
 
 resources:
   Resources:
-    PostsListTable:
+    ExperiencesListTable:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: ${self:provider.environment.EXPERIENCES_TABLE}

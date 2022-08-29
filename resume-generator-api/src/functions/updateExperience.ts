@@ -1,9 +1,4 @@
-import {
-  APIGatewayEvent,
-  Handler,
-  Context,
-  APIGatewayProxyResult,
-} from "aws-lambda";
+import { APIGatewayEvent, Handler, Context, APIGatewayProxyResult } from "aws-lambda";
 import middify from "../core/middify";
 import formatJSONResponse from "../core/formatJsonResponse";
 import experienceService from "../database/services";

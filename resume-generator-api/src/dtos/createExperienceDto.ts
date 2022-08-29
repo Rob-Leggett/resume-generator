@@ -1,7 +1,9 @@
 interface ExperiencePost {
   body: {
-    title: string;
-    description: string;
+    role: string;
+    from: string;
+    to: string;
+    tasks: string[];
   };
 }
 
