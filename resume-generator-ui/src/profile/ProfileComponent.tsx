@@ -25,8 +25,10 @@ const ProfileComponent = () => {
         const domain = configuration.auth0.domain;
         try {
           const accessToken = await getAccessTokenSilently({
-            audience: `https://${domain}/api/v2/`,
-            scope: configuration.auth0.scopes,
+              authorizationParams: {
+                audience: `https://${domain}/api/v2/`,
+                scope: configuration.auth0.scopes,
+              }
           });
 
           const userDetailsByIdUrl = `https://${domain}/api/v2/users/${user?.sub}`;

@@ -19,9 +19,11 @@ root.render(
      <Auth0Provider
        domain={configuration.auth0.domain}
        clientId={configuration.auth0.clientId}
-       redirectUri={window.location.origin}
-       audience={configuration.auth0.audience}
-       scope={configuration.auth0.scopes}
+       authorizationParams={{
+         redirect_uri: window.location.origin,
+         audience: configuration.auth0.audience,
+         scope: configuration.auth0.scopes,
+       }}
      >
       <App />
      </Auth0Provider>

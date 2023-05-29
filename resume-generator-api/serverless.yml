@@ -4,6 +4,7 @@ service: resume-generator-api
 plugins:
   - serverless-webpack
   - serverless-dynamodb-local
+  - serverless-plugin-typescript
   - serverless-offline
 
 custom:
@@ -41,42 +42,70 @@ provider:
             - dynamodb:DeleteItem
           Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.EXPERIENCES_TABLE}"
 
+# Lambda Events to API Gateway V1
 functions:
-  createExperience:
+  create-experience:
     handler: src/functions/createExperience.handler
     events:
       - http:
           method: post
           path: create-experience
           cors: true
-  getAllExperiences:
+          authorizer:
+            name: authorizers
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
+            type: token
+  get-all-experiences:
     handler: src/functions/getAllExperiences.handler
     events:
       - http:
           method: get
           path: get-experiences
           cors: true
-  getExperience:
+          authorizer:
+            name: authorizers
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
+            type: token
+  get-experience:
     handler: src/functions/getExperience.handler
     events:
       - http:
           method: get
           path: get-experience/{experienceId}
           cors: true
-  updateExperience:
+          authorizer:
+            name: authorizers
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
+            type: token
+  update-experience:
     handler: src/functions/updateExperience.handler
     events:
       - http:
           method: put
           path: update-experience/{experienceId}
           cors: true
-  deleteExperience:
+          authorizer:
+            name: authorizers
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
+            type: token
+  delete-experience:
     handler: src/functions/deleteExperience.handler
     events:
       - http:
           method: delete
           path: delete-experience/{experienceId}
           cors: true
+          authorizer:
+            name: authorizers
+            resultTtlInSeconds: 0
+            identitySource: method.request.header.Authorization
+            type: token
+  authorizers:
+    handler: src/functions/authorizer.handler
 
 resources:
   Resources:

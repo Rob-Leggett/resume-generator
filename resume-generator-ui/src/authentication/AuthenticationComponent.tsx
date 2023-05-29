@@ -15,7 +15,7 @@ const AuthenticationComponent = () => {
   function loginUser() {
     return (
       <div className="authentication-container">
-        <button className="button" onClick={loginWithRedirect}>Log in</button>
+        <button className="button" onClick={() => {loginWithRedirect()}}>Log in</button>
       </div>
     );
   }
@@ -24,7 +24,7 @@ const AuthenticationComponent = () => {
     return (
       <div className="authentication-container">
         <span className="authentication-msg">Hello {user ? user.name : 'User'}</span>
-        <button className="button" onClick={() => logout({returnTo: window.location.origin})}>
+        <button className="button" onClick={() => logout({logoutParams: {returnTo: window.location.origin}})}>
           Log out
         </button>
       </div>

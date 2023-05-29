@@ -6,3 +6,4 @@
 /resume-generator-api/.dynamodb/
 /resume-generator-api/.webpack/
 /resume-generator-api/yarn.lock
+/resume-generator-api/.build/

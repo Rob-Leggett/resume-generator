@@ -3,7 +3,7 @@ const configuration = {
     domain: "YOUR_DOMAIN",
     clientId: "YOUR_CLIENT_ID",
     audience: "https://YOUR_DOMAIN/api/v2/",
-    scopes: "read:current_user"
+    scopes: "profile email read:current_user"
   }
 
 }

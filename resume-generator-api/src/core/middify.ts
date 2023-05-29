@@ -3,8 +3,12 @@ import middy from "@middy/core";
 import middyJsonBodyParser from "@middy/http-json-body-parser";
 import cors from "@middy/http-cors";
 
-const middify = (handler: Handler) => {
-  return middy(handler).use(middyJsonBodyParser()).use(cors());
-};
+export const middify = (handler: Handler, useCors: boolean) => {
+  const parser = middy(handler).use(middyJsonBodyParser())
 
-export default middify;
+  if (useCors) {
+    parser.use(cors());
+  }
+
+  return parser;
+};
