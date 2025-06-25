@@ -1,0 +1,10 @@
+.themeContainer {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Apply theme override using global selectors for the outer elements, and local for the component */
+:global([data-theme='modern']) .themeContainer {
+
+}

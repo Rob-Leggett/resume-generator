@@ -1,0 +1,15 @@
+/* Panel.module.css */
+.panelContainer {
+    height: 100%;
+    padding: 1rem;
+}
+
+/* Apply theme override using global selectors for the outer elements, and local for the component */
+:global([data-theme='modern']) :global(.left-panel) .panelContainer {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+:global([data-theme='modern']) :global(.right-panel) .panelContainer {
+    width: 100%;
+}

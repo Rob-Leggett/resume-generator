@@ -1,0 +1,203 @@
+/* Page layout for printing or export */
+body {
+    size: 21cm 29.7cm;
+    margin: 3mm 45mm 3mm 45mm;
+    /* adjust as needed */
+}
+
+/* Common styles for 'modern' theme */
+
+[data-theme='modern'] .flex-container {
+    display: flex;
+}
+
+[data-theme='modern'] .flex-container .left-panel {
+    width: 80%;
+}
+
+[data-theme='modern'] .flex-container .right-panel {
+    width: 20%;
+}
+
+[data-theme='modern'] .loading {
+
+}
+
+[data-theme='modern'] .error {
+
+}
+
+[data-theme='modern'] .spacer {
+    padding-left: 3px;
+}
+
+[data-theme='modern'] .button {
+    background-color: #FFFFFF;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #222222;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 13px 23px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow 0.2s, transform 0.1s;
+    user-select: none;
+    width: auto;
+}
+
+[data-theme='modern'] .button:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+}
+
+[data-theme='modern'] .button:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(0.96);
+}
+
+[data-theme='modern'] .button:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+[data-theme='modern'] .select-dropdown,
+[data-theme='modern'] .select-dropdown * {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+[data-theme='modern'] .select-dropdown {
+    position: relative;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+[data-theme='modern'] .select-dropdown select:active,
+[data-theme='modern'] .select-dropdown select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+[data-theme='modern'] .select-dropdown:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    width: 0;
+    height: 0;
+    margin-top: -2px;
+    border-top: 5px solid #aaa;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+
+/* ThemeChanger styles for 'modern' theme */
+
+[data-theme='modern'] .theme-msg {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 12pt;
+    line-height: 20px;
+    padding-right: 10px;
+}
+
+[data-theme='modern'] .theme-selector select {
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 100%;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Profile styles for 'modern' profile */
+
+[data-theme='modern'] .profile-img {
+    width: -webkit-fill-available;
+}
+
+[data-theme='modern'] .profile-header {
+    font-size: 20pt;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+[data-theme='modern'] .profile-data {
+    display: flex;
+    align-items: baseline;
+    padding-left: 30px;
+    font-size: smaller;
+}
+
+[data-theme='modern'] .profile-item {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+[data-theme='modern'] .profile-link {
+    text-decoration: none;
+    color: mediumblue;
+}
+
+/* Name styles for 'modern' name */
+
+[data-theme='modern'] .name-msg {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 46pt;
+    text-align: right;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 5px;
+    border-bottom: 10px #ffffff solid;
+    width: 80%;
+}
+
+/* Authentication styles for 'modern' authentication */
+
+[data-theme='modern'] .authentication-msg {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 12pt;
+    line-height: 20px;
+    padding-right: 10px;
+}
+
+/* Certification styles for 'modern' certification */
+
+[data-theme='modern'] .certification-header {
+    font-size: 20pt;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+[data-theme='modern'] .certification-data {
+    padding-left: 30px;
+    font-size: smaller;
+}
+
+[data-theme='modern'] .certification-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+[data-theme='modern'] .certification-link {
+    text-decoration: none;
+    color: mediumblue;
+}

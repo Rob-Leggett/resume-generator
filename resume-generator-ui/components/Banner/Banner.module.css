@@ -1,0 +1,9 @@
+.bannerContainer {
+    display: flex;
+}
+
+/* Apply theme override using global selectors for the outer elements, and local for the component */
+:global([data-theme='modern']) .bannerContainer {
+    justify-content: space-between;
+    width: 100%;
+}
