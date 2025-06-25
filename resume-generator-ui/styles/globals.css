@@ -1,12 +1,14 @@
-/* Page layout for printing or export */
 body {
-    size: 21cm 29.7cm;
-    margin: 3mm 45mm 3mm 45mm;
-    /* adjust as needed */
+    margin: 2em;
 }
 
-/* Common styles for 'modern' theme */
+/* ========== COMMON STYLES FOR 'modern' THEME ========== */
 
+[data-theme='modern'] {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Layout */
 [data-theme='modern'] .flex-container {
     display: flex;
 }
@@ -19,78 +21,64 @@ body {
     width: 20%;
 }
 
-[data-theme='modern'] .loading {
-
-}
+/* Utility */
+[data-theme='modern'] .loading {}
 
 [data-theme='modern'] .error {
-
+    color: red;
 }
 
 [data-theme='modern'] .spacer {
     padding-left: 3px;
 }
 
+/* Buttons */
 [data-theme='modern'] .button {
-    background-color: #FFFFFF;
-    border: 1px solid #222222;
+    background-color: #fff;
+    border: 1px solid #222;
     border-radius: 8px;
     box-sizing: border-box;
-    color: #222222;
+    color: #222;
     cursor: pointer;
     display: inline-block;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
-    margin: 0;
-    outline: none;
     padding: 13px 23px;
-    position: relative;
     text-align: center;
-    text-decoration: none;
-    touch-action: manipulation;
     transition: box-shadow 0.2s, transform 0.1s;
     user-select: none;
-    width: auto;
 }
 
 [data-theme='modern'] .button:focus-visible {
-    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    box-shadow: #222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
 }
 
 [data-theme='modern'] .button:active {
-    background-color: #F7F7F7;
-    border-color: #000000;
+    background-color: #f7f7f7;
+    border-color: #000;
     transform: scale(0.96);
 }
 
 [data-theme='modern'] .button:disabled {
-    border-color: #DDDDDD;
-    color: #DDDDDD;
+    border-color: #ddd;
+    color: #ddd;
     cursor: not-allowed;
-    opacity: 1;
 }
 
+/* Dropdowns */
 [data-theme='modern'] .select-dropdown,
 [data-theme='modern'] .select-dropdown * {
     margin: 0;
     padding: 0;
-    position: relative;
     box-sizing: border-box;
 }
 
 [data-theme='modern'] .select-dropdown {
-    position: relative;
     background-color: #e6e6e6;
     border-radius: 4px;
     padding: 5px;
-}
-
-[data-theme='modern'] .select-dropdown select:active,
-[data-theme='modern'] .select-dropdown select:focus {
-    outline: none;
-    box-shadow: none;
+    position: relative;
 }
 
 [data-theme='modern'] .select-dropdown:after {
@@ -98,18 +86,21 @@ body {
     position: absolute;
     top: 50%;
     right: 8px;
-    width: 0;
-    height: 0;
     margin-top: -2px;
     border-top: 5px solid #aaa;
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
 }
 
-/* ThemeChanger styles for 'modern' theme */
+[data-theme='modern'] .select-dropdown select:focus,
+[data-theme='modern'] .select-dropdown select:active {
+    outline: none;
+    box-shadow: none;
+}
 
-[data-theme='modern'] .theme-msg {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+/* Theme Changer */
+[data-theme='modern'] .theme-msg,
+[data-theme='modern'] .authentication-msg {
     font-size: 12pt;
     line-height: 20px;
     padding-right: 10px;
@@ -117,165 +108,69 @@ body {
 
 [data-theme='modern'] .theme-selector select {
     font-size: 1rem;
-    font-weight: normal;
-    max-width: 100%;
     padding: 8px 24px 8px 10px;
     border: none;
     background-color: transparent;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
-/* Name styles for 'modern' name */
-
+/* Name Header */
 [data-theme='modern'] .name-msg {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 46pt;
     text-align: right;
-    padding-top: 40px;
-    padding-right: 40px;
-    padding-bottom: 5px;
-    border-bottom: 10px #ffffff solid;
+    padding: 40px 40px 5px 0;
+    border-bottom: 10px #fff solid;
     width: 80%;
 }
 
-/* Authentication styles for 'modern' authentication */
-
-[data-theme='modern'] .authentication-msg {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 12pt;
-    line-height: 20px;
-    padding-right: 10px;
-}
-
-/* Profile styles for 'modern' profile */
-
+/* Profile */
 [data-theme='modern'] .profile-img {
     width: -webkit-fill-available;
 }
 
-[data-theme='modern'] .profile-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 20pt;
-    font-weight: bold;
-    padding-left: 30px;
-}
-
-[data-theme='modern'] .profile-data {
-    display: flex;
-    align-items: baseline;
-    padding-left: 30px;
-    font-size: smaller;
-}
-
-[data-theme='modern'] .profile-item {
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-[data-theme='modern'] .profile-link {
-    text-decoration: none;
-    color: mediumblue;
-}
-
-/* Certification styles for 'modern' certification */
-
-[data-theme='modern'] .certification-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 20pt;
-    font-weight: bold;
-    padding-left: 30px;
-}
-
-[data-theme='modern'] .certification-data {
-    padding-left: 30px;
-    font-size: smaller;
-}
-
-[data-theme='modern'] .certification-item {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-[data-theme='modern'] .certification-link {
-    text-decoration: none;
-    color: mediumblue;
-}
-
-/* Skills styles for 'modern' skill */
-
-[data-theme='modern'] .skills-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 20pt;
-    font-weight: bold;
-    padding-left: 30px;
-}
-
-[data-theme='modern'] .skills-data {
-    padding-left: 30px;
-    font-size: smaller;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-}
-
-[data-theme='modern'] .skills-item {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-/* Specialities styles for 'modern' speciality */
-
-[data-theme='modern'] .specialities-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 20pt;
-    font-weight: bold;
-    padding-left: 30px;
-}
-
-[data-theme='modern'] .specialities-data {
-    padding-left: 30px;
-    font-size: smaller;
-    margin-block-start: 0;
-    margin-block-end: 5px;
-}
-
-[data-theme='modern'] .specialities-item {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-/* Education styles for 'modern' education */
-
+[data-theme='modern'] .profile-header,
+[data-theme='modern'] .certification-header,
+[data-theme='modern'] .skills-header,
+[data-theme='modern'] .specialities-header,
 [data-theme='modern'] .education-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 20pt;
     font-weight: bold;
     padding-left: 30px;
 }
 
+[data-theme='modern'] .profile-data,
+[data-theme='modern'] .certification-data,
+[data-theme='modern'] .skills-data,
+[data-theme='modern'] .specialities-data,
 [data-theme='modern'] .education-data {
     padding-left: 30px;
     font-size: smaller;
+    margin-block-start: 0;
 }
 
+[data-theme='modern'] .profile-item,
+[data-theme='modern'] .certification-item,
+[data-theme='modern'] .skills-item,
+[data-theme='modern'] .specialities-item,
 [data-theme='modern'] .education-item {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     margin-top: 5px;
     margin-bottom: 0;
 }
 
-/* Summary styles for 'modern' summaries */
+[data-theme='modern'] .profile-link,
+[data-theme='modern'] .certification-link {
+    text-decoration: none;
+    color: mediumblue;
+    word-wrap: break-word;
+}
 
-[data-theme='modern'] .summary-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+/* Summary */
+[data-theme='modern'] .summary-header,
+[data-theme='modern'] .experiences-header {
     font-size: 24pt;
     font-weight: bold;
-    padding-right: 50px;
     text-align: right;
+    padding-right: 50px;
 }
 
 [data-theme='modern'] .summary-data {
@@ -284,29 +179,17 @@ body {
 }
 
 [data-theme='modern'] .summary-item {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     margin-top: 8px;
     margin-bottom: 0;
 }
 
-/* Experiences styles for 'modern' experiences */
-
-[data-theme='modern'] .experiences-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    font-size: 24pt;
-    font-weight: bold;
-    padding-right: 50px;
-    text-align: right;
-}
-
+/* Experiences */
 [data-theme='modern'] .experiences-description-data {
-    padding-left: 30px;
+    padding: 0 50px 0 30px;
     font-size: small;
-    padding-right: 50px;
 }
 
 [data-theme='modern'] .experiences-item-header {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 18pt;
     font-weight: bold;
     text-align: right;
@@ -314,7 +197,62 @@ body {
 }
 
 [data-theme='modern'] .experiences-item {
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     margin-top: 8px;
     margin-bottom: 0;
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        color: black;
+        font-size: 10pt;
+    }
+
+    [data-theme='modern'] {
+        background: white !important;
+        color: black !important;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    }
+
+    [data-theme='modern'] .flex-container {
+        flex-direction: row;
+        width: 100%;
+        page-break-inside: avoid;
+    }
+
+    [data-theme='modern'] .flex-container .left-panel {
+        width: 75%;
+    }
+
+    [data-theme='modern'] .flex-container .right-panel {
+        width: 25%;
+    }
+
+    /* Hide interactive elements */
+    [data-theme='modern'] .button,
+    [data-theme='modern'] .select-dropdown,
+    [data-theme='modern'] .theme-selector,
+    [data-theme='modern'] .authentication-msg {
+        display: none !important;
+    }
+
+    /* Adjust text alignment for print */
+    [data-theme='modern'] .summary-header,
+    [data-theme='modern'] .experiences-header,
+    [data-theme='modern'] .experiences-item-header {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    /* Avoid breaking inside items */
+    [data-theme='modern'] .experiences-item,
+    [data-theme='modern'] .summary-item,
+    [data-theme='modern'] .skills-item,
+    [data-theme='modern'] .specialities-item,
+    [data-theme='modern'] .education-item {
+        page-break-inside: avoid;
+    }
 }

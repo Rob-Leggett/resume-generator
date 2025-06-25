@@ -2,8 +2,8 @@ import styles from './Skills.module.css';
 import { skills } from '../../src/config/content';
 
 const Skills = () => {
-  const renderSkillData = (skill: string) => (
-    <ul className="skills-data">
+  const renderSkillData = (skill: string, index: number) => (
+    <ul key={index} className="skills-data">
       <li className="skills-item">{skill}</li>
     </ul>
   );
