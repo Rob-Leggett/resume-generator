@@ -1,0 +1,10 @@
+.specialitiesContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+/* Apply theme override using global selectors for the outer elements, and local for the component */
+:global([data-theme='modern']) .specialitiesContainer {
+
+}

@@ -1,4 +1,4 @@
-import styles from './Certification.module.css';
+import styles from './Certifications.module.css';
 
 interface CertificationData {
   name: string;
@@ -29,7 +29,7 @@ const certifications: CertificationData[] = [
   },
 ];
 
-const Certification = () => {
+const Certifications = () => {
   const renderCertificationData = (cert: CertificationData) => (
     <div key={cert.name} className="certification-data">
       <p className="certification-item"><strong>{cert.name}</strong></p>
@@ -44,11 +44,11 @@ const Certification = () => {
   );
 
   return (
-    <div className={styles.certificationContainer}>
+    <div className={styles.certificationsContainer}>
       <p className="certification-header">Certifications</p>
       {certifications.map(renderCertificationData)}
     </div>
   );
 };
 
-export default Certification;
+export default Certifications;

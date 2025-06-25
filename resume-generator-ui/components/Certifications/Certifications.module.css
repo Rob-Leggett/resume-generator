@@ -1,8 +1,8 @@
-.certificationContainer {
+.certificationsContainer {
 
 }
 
 /* Apply theme override using global selectors for the outer elements, and local for the component */
-:global([data-theme='modern']) .certificationContainer {
+:global([data-theme='modern']) .certificationsContainer {
     width: 100%;
 }
