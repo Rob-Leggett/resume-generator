@@ -5,7 +5,6 @@ const configuration = {
     audience: "https://dev-alcmh6jt.us.auth0.com/api/v2/",
     scopes: "profile email read:current_user"
   }
-
 }
 
 export default configuration;
