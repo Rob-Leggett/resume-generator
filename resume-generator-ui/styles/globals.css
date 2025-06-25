@@ -127,35 +127,6 @@ body {
     appearance: none;
 }
 
-/* Profile styles for 'modern' profile */
-
-[data-theme='modern'] .profile-img {
-    width: -webkit-fill-available;
-}
-
-[data-theme='modern'] .profile-header {
-    font-size: 20pt;
-    font-weight: bold;
-    padding-left: 30px;
-}
-
-[data-theme='modern'] .profile-data {
-    display: flex;
-    align-items: baseline;
-    padding-left: 30px;
-    font-size: smaller;
-}
-
-[data-theme='modern'] .profile-item {
-    margin-top: 5px;
-    margin-bottom: 0;
-}
-
-[data-theme='modern'] .profile-link {
-    text-decoration: none;
-    color: mediumblue;
-}
-
 /* Name styles for 'modern' name */
 
 [data-theme='modern'] .name-msg {
@@ -178,9 +149,40 @@ body {
     padding-right: 10px;
 }
 
+/* Profile styles for 'modern' profile */
+
+[data-theme='modern'] .profile-img {
+    width: -webkit-fill-available;
+}
+
+[data-theme='modern'] .profile-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+[data-theme='modern'] .profile-data {
+    display: flex;
+    align-items: baseline;
+    padding-left: 30px;
+    font-size: smaller;
+}
+
+[data-theme='modern'] .profile-item {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+[data-theme='modern'] .profile-link {
+    text-decoration: none;
+    color: mediumblue;
+}
+
 /* Certification styles for 'modern' certification */
 
 [data-theme='modern'] .certification-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     font-size: 20pt;
     font-weight: bold;
     padding-left: 30px;
@@ -200,4 +202,55 @@ body {
 [data-theme='modern'] .certification-link {
     text-decoration: none;
     color: mediumblue;
+}
+
+/* Summary styles for 'modern' summaries */
+
+[data-theme='modern'] .summary-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    padding-right: 50px;
+    text-align: right;
+}
+
+[data-theme='modern'] .summary-data {
+    padding-left: 30px;
+    font-size: small;
+}
+
+[data-theme='modern'] .summary-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+/* Experiences styles for 'modern' experiences */
+
+[data-theme='modern'] .experiences-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    padding-right: 50px;
+    text-align: right;
+}
+
+[data-theme='modern'] .experiences-description-data {
+    padding-left: 30px;
+    font-size: small;
+    padding-right: 50px;
+}
+
+[data-theme='modern'] .experiences-item-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 50px;
+}
+
+[data-theme='modern'] .experiences-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 8px;
+    margin-bottom: 0;
 }
