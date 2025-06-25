@@ -204,6 +204,70 @@ body {
     color: mediumblue;
 }
 
+/* Skills styles for 'modern' skill */
+
+[data-theme='modern'] .skills-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+[data-theme='modern'] .skills-data {
+    padding-left: 30px;
+    font-size: smaller;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+}
+
+[data-theme='modern'] .skills-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* Specialities styles for 'modern' speciality */
+
+[data-theme='modern'] .specialities-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+[data-theme='modern'] .specialities-data {
+    padding-left: 30px;
+    font-size: smaller;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+}
+
+[data-theme='modern'] .specialities-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* Education styles for 'modern' education */
+
+[data-theme='modern'] .education-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20pt;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+[data-theme='modern'] .education-data {
+    padding-left: 30px;
+    font-size: smaller;
+}
+
+[data-theme='modern'] .education-item {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
 /* Summary styles for 'modern' summaries */
 
 [data-theme='modern'] .summary-header {
