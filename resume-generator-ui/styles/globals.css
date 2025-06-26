@@ -203,35 +203,55 @@ body {
 
 /* ========== PRINT STYLES ========== */
 @media print {
-    body {
-        margin: 0;
-        padding: 0;
-        background: white;
-        color: black;
-        font-size: 10pt;
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+        color: black !important;
+        font-size: 10pt !important;
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+        overflow: visible !important;
+        page-break-before: avoid !important;
     }
 
     [data-theme='modern'] {
         background: white !important;
         color: black !important;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        page-break-before: avoid !important;
     }
 
     [data-theme='modern'] .flex-container {
-        flex-direction: row;
-        width: 100%;
-        page-break-inside: avoid;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        gap: 0 !important;
+        box-sizing: border-box !important;
+        page-break-before: avoid !important;
     }
 
-    [data-theme='modern'] .flex-container .left-panel {
-        width: 75%;
+    [data-theme='modern'] .left-panel,
+    [data-theme='modern'] .right-panel {
+        padding: 16px !important;
+        box-sizing: border-box !important;
+        page-break-before: avoid !important;
     }
 
-    [data-theme='modern'] .flex-container .right-panel {
-        width: 25%;
+    [data-theme='modern'] .left-panel {
+        width: 70% !important;
     }
 
-    /* Hide interactive elements */
+    [data-theme='modern'] .right-panel {
+        width: 30% !important;
+        text-align: left !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+
+    /* Hide UI elements */
     [data-theme='modern'] .button,
     [data-theme='modern'] .select-dropdown,
     [data-theme='modern'] .theme-selector,
@@ -239,20 +259,29 @@ body {
         display: none !important;
     }
 
-    /* Adjust text alignment for print */
+    /* Fix heading alignment */
     [data-theme='modern'] .summary-header,
     [data-theme='modern'] .experiences-header,
     [data-theme='modern'] .experiences-item-header {
-        text-align: left;
-        padding-right: 0;
+        text-align: left !important;
+        padding-right: 0 !important;
     }
 
-    /* Avoid breaking inside items */
-    [data-theme='modern'] .experiences-item,
+    /* Prevent content splitting */
     [data-theme='modern'] .summary-item,
+    [data-theme='modern'] .experiences-item,
     [data-theme='modern'] .skills-item,
     [data-theme='modern'] .specialities-item,
     [data-theme='modern'] .education-item {
-        page-break-inside: avoid;
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* Prevent extra blank pages */
+    * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        page-break-before: auto !important;
+        page-break-after: auto !important;
     }
 }
