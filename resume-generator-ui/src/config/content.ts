@@ -33,23 +33,39 @@ export const specialities: string[] = [
   'Experienced leading multiple Agile delivery teams to delivery customer focused solutions'
 ]
 
-export const skills: string[] = [
-  'Engineering (Development, Delivery)',
-  'Architecture (Cloud / Technical / Solution)',
-  'Leadership (Team / Strategic / Technical / People)',
-  'Communication / Strategic Thinking / Problem Solving',
-  'Digital Transformation / Agile Methodologies',
-  'Multi-cloud Certified (GCP / AWS / Azure)',
-  'Identity, Finance, AI & Compliance'
+export interface SkillData {
+  type: string;
+  description: string;
+}
+
+export const skills: SkillData[] = [
+  {
+    type: 'Leadership',
+    description: 'Team, Strategic, Technical, People, Digital transformation, Communication, Problem solving'
+  },
+  {
+    type: 'Architecture',
+    description: 'Cloud, Technical, Solution, GCP, AWS, Azure'
+  },
+  {
+    type: 'Engineering',
+    description: 'Development, Delivery, Finance, Compliance, Identity, Agile'
+  },
+  {
+    type: 'Environments',
+    description: 'Enterprise, Startup'
+  }
 ];
 
 export interface EducationData {
+  school: string;
   name: string;
   date: string;
 }
 
 export const education: EducationData[] = [
   {
+    school: 'Swinburne University of Technology',
     name: 'Bachelor of Multimedia and Software Development',
     date: '2002– 2006'
   }

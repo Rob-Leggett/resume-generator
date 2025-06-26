@@ -1,17 +1,29 @@
 import styles from './Skills.module.css';
-import { skills } from '../../src/config/content';
+import { SkillData, skills } from '../../src/config/content';
+import { useAuth0, User } from '@auth0/auth0-react';
 
 const Skills = () => {
-  const renderSkillData = (skill: string, index: number) => (
-    <ul key={index} className="skills-data">
-      <li className="skills-item">{skill}</li>
-    </ul>
+  const { user, isLoading, error } = useAuth0<User>();
+
+  if (isLoading) {
+    return <div className="loading">Loading Skills</div>;
+  }
+
+  if (error) {
+    return <div className="error">Oops... {error.message}</div>;
+  }
+
+  const renderSkillData = (skill: SkillData, index: number) => (
+    <div key={index} className="skills-data">
+      <p className="skills-item"><strong>{skill.type}</strong></p>
+      <p className="skills-item">{skill.description}</p>
+    </div>
   );
 
   return (
     <div className={styles.skillsContainer}>
       <p className="skills-header">Skills</p>
-      {skills.map(renderSkillData)}
+      {user ? skills.map(renderSkillData) : null}
     </div>
   );
 };
