@@ -231,7 +231,7 @@ body {
     [data-theme='modern'] {
         background: white !important;
         color: black !important;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
         page-break-before: avoid !important;
     }
 
@@ -247,13 +247,13 @@ body {
 
     [data-theme='modern'] .left-panel,
     [data-theme='modern'] .right-panel {
-        padding: 16px !important;
         box-sizing: border-box !important;
         page-break-before: avoid !important;
     }
 
     [data-theme='modern'] .left-panel {
         width: 70% !important;
+        padding: 5px !important;
     }
 
     [data-theme='modern'] .right-panel {
@@ -271,6 +271,15 @@ body {
         display: none !important;
     }
 
+    /* Fix heading size */
+    [data-theme='modern'] .profile-header,
+    [data-theme='modern'] .certification-header,
+    [data-theme='modern'] .skills-header,
+    [data-theme='modern'] .achievements-header,
+    [data-theme='modern'] .education-header {
+        font-size: 14pt;
+    }
+
     /* Fix heading alignment */
     [data-theme='modern'] .summary-header,
     [data-theme='modern'] .experiences-header,
@@ -279,6 +288,13 @@ body {
     [data-theme='modern'] .experiences-company-header {
         text-align: left !important;
         padding-right: 0 !important;
+        margin-block-end: 0 !important;
+    }
+
+    /* Fix content size */
+    [data-theme='modern'] .summary-data,
+    [data-theme='modern'] .experiences-description-data {
+        font-size: small;
     }
 
     /* Prevent content splitting */
