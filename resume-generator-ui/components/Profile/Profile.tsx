@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth0, User } from '@auth0/auth0-react';
 import configuration from '../../src/config/constants';
+import { renderIcon } from '../Icons/Icons';
 import styles from './Profile.module.css';
 
 interface UserMetadata {
@@ -13,6 +14,7 @@ interface UserMetadata {
 interface ProfileItem {
   label: string;
   value?: string;
+  icon?: string;
 }
 
 const Profile = () => {
@@ -45,45 +47,50 @@ const Profile = () => {
     fetchUserMetadata();
   }, [getAccessTokenSilently, user]);
 
-  const renderProfileData = ({ label, value }: ProfileItem) =>
+  const renderProfileData = ({ icon, label, value }: ProfileItem) =>
     value ? (
       <div className="profile-data">
-        <p className="profile-item">{label}</p>
-        <p className="profile-item spacer">{value}</p>
+        <p className="profile-item">{renderIcon(icon) ?? label} {value}</p>
       </div>
     ) : null;
 
-  const renderProfileLink = ({ label, value }: ProfileItem) =>
+  const renderProfileLink = ({ icon, label, value }: ProfileItem) =>
     value ? (
       <div className="profile-data">
-        <p className="profile-item">{label}</p>
-        <a
-          className="profile-link spacer"
-          href={value}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {value}
-        </a>
+        <p className="profile-item">{renderIcon(icon) ?? label}
+          <a
+            className="profile-link spacer"
+            href={value}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {value}
+          </a>
+        </p>
       </div>
     ) : null;
 
-  if (isLoading) return <div className="loading">Loading Profile</div>;
-  if (error) return <div className="error">Oops... {error.message}</div>;
-  if (!user) return null;
+  if (isLoading) {
+    return <div className="loading">Loading Profile</div>;
+  }
+
+  if (error) {
+    return <div className="error">Oops... {error.message}</div>;
+  }
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <div className={styles.profileContainer}>
-      {user.picture && (
-        <img className="profile-img" src={user.picture} alt={user.name || 'Profile'} />
-      )}
+      {user.picture && (<img className="profile-img" src={user.picture} alt={user.name || 'Profile'} />)}
       <p className="profile-header">Contact</p>
-
-      {renderProfileData({ label: 'Email:', value: user.email })}
-      {renderProfileData({ label: 'Mobile:', value: userMetadata?.mobile })}
-      {renderProfileLink({ label: 'Blog:', value: userMetadata?.blog_url })}
-      {renderProfileLink({ label: 'GitHub:', value: userMetadata?.github_url })}
-      {renderProfileLink({ label: 'LinkedIn:', value: userMetadata?.linkedin_url })}
+      {renderProfileData({ icon: 'MdEmail', label: 'Email:', value: user.email })}
+      {renderProfileData({ icon: 'FaPhoneAlt', label: 'Mobile:', value: userMetadata?.mobile })}
+      {renderProfileLink({ icon: 'CgWebsite', label: 'Blog:', value: userMetadata?.blog_url })}
+      {renderProfileLink({ icon: 'FaGithub', label: 'GitHub:', value: userMetadata?.github_url })}
+      {renderProfileLink({ icon: 'FaLinkedin', label: 'LinkedIn:', value: userMetadata?.linkedin_url })}
     </div>
   );
 };

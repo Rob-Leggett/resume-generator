@@ -1,5 +1,6 @@
 import styles from './Experiences.module.css';
 import { ExperienceData, experiences } from '../../src/config/content';
+import { renderIcon } from '../Icons/Icons';
 import { useAuth0, User } from '@auth0/auth0-react';
 
 const Experiences = () => {
@@ -21,7 +22,9 @@ const Experiences = () => {
 
   const renderExperienceData = (exp: ExperienceData) => (
     <div key={exp.role} className="experiences-data">
-      <p className="experiences-item-header">{exp.role} ({exp.period}) - {exp.company}</p>
+      <p className="experiences-role-header">{exp.role}</p>
+      <p className="experiences-company-header">{exp.company}</p>
+      <p className="experiences-period-header">{renderIcon('FaRegCalendarAlt')} {exp.period}</p>
       {exp.description.map(renderDescriptionData)}
     </div>
   );

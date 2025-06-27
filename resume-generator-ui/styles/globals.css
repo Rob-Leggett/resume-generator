@@ -126,6 +126,7 @@ body {
 /* Profile */
 [data-theme='modern'] .profile-img {
     width: -webkit-fill-available;
+    max-width: 300px;
 }
 
 [data-theme='modern'] .profile-header,
@@ -174,8 +175,6 @@ body {
 [data-theme='modern'] .experiences-header {
     font-size: 24pt;
     font-weight: bold;
-    text-align: right;
-    padding-right: 50px;
 }
 
 [data-theme='modern'] .summary-data {
@@ -191,13 +190,26 @@ body {
 [data-theme='modern'] .experiences-description-data {
     padding: 0 50px 0 30px;
     font-size: medium;
+    margin-block-end: 0;
 }
 
-[data-theme='modern'] .experiences-item-header {
+[data-theme='modern'] .experiences-role-header {
     font-size: 18pt;
     font-weight: bold;
-    text-align: right;
-    padding-right: 50px;
+    margin-block-end: 0;
+}
+
+[data-theme='modern'] .experiences-period-header {
+    font-size: 12pt;
+    margin-block-start: 2px;
+    margin-block-end: 0;
+}
+
+[data-theme='modern'] .experiences-company-header {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-block-start: 2px;
+    margin-block-end: 0;
 }
 
 /* ========== PRINT STYLES ========== */
@@ -261,7 +273,9 @@ body {
     /* Fix heading alignment */
     [data-theme='modern'] .summary-header,
     [data-theme='modern'] .experiences-header,
-    [data-theme='modern'] .experiences-item-header {
+    [data-theme='modern'] .experiences-role-header,
+    [data-theme='modern'] .experiences-period-header,
+    [data-theme='modern'] .experiences-company-header {
         text-align: left !important;
         padding-right: 0 !important;
     }
