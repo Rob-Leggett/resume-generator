@@ -8,7 +8,7 @@ import ThemeChanger from '../components/ThemeChanger/ThemeChanger';
 import Name from '../components/Name/Name';
 import Summary from '../components/Summary/Summary';
 import Experiences from '../components/Experiences/Experiences';
-import Specialities from '../components/Specialities/Specialities';
+import Achievements from '../components/Achievements/Achievements';
 import Skills from '../components/Skills/Skills';
 import Education from '../components/Education/Education';
 
@@ -33,7 +33,7 @@ export default function Home() {
           <Panel>
             <Profile />
             <Certifications />
-            <Specialities />
+            <Achievements />
             <Skills />
             <Education />
           </Panel>

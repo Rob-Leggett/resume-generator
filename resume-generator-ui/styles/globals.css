@@ -132,7 +132,7 @@ body {
 [data-theme='modern'] .profile-header,
 [data-theme='modern'] .certification-header,
 [data-theme='modern'] .skills-header,
-[data-theme='modern'] .specialities-header,
+[data-theme='modern'] .achievements-header,
 [data-theme='modern'] .education-header {
     font-size: 20pt;
     font-weight: bold;
@@ -141,7 +141,7 @@ body {
 [data-theme='modern'] .profile-data,
 [data-theme='modern'] .certification-data,
 [data-theme='modern'] .skills-data,
-[data-theme='modern'] .specialities-data,
+[data-theme='modern'] .achievements-data,
 [data-theme='modern'] .education-data {
     padding-left: 10px;
     font-size: small;
@@ -152,7 +152,7 @@ body {
 [data-theme='modern'] .profile-item,
 [data-theme='modern'] .certification-item,
 [data-theme='modern'] .skills-item,
-[data-theme='modern'] .specialities-item,
+[data-theme='modern'] .achievements-item,
 [data-theme='modern'] .education-item {
     margin-top: 5px;
     margin-bottom: 0;
@@ -285,7 +285,7 @@ body {
     [data-theme='modern'] .summary-item,
     [data-theme='modern'] .experiences-item,
     [data-theme='modern'] .skills-item,
-    [data-theme='modern'] .specialities-item,
+    [data-theme='modern'] .achievements-item,
     [data-theme='modern'] .education-item {
         break-inside: avoid !important;
         page-break-inside: avoid !important;

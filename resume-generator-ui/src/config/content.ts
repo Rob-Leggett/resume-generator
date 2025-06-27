@@ -27,10 +27,24 @@ export const certifications: CertificationData[] = [
   },
 ];
 
-export const specialities: string[] = [
-  'Excellent communicator, strategic thinker, and problem solver.',
-  'Ability to build high performing teams, lead in future focused ways of working, grow innovation and experimentation, perform digital and agile transformation.',
-  'Experienced leading multiple Agile delivery teams to delivery customer focused solutions'
+export interface AchievementData {
+  name: string;
+  description: string;
+}
+
+export const achievements: AchievementData[] = [
+  {
+    name: 'Improved Platform Resilience',
+    description: 'Achieved a 35% increase in platform reliability by leading the integration of core enterprise systems in 2024.'
+  },
+  {
+    name: 'Operational Cost Reduction',
+    description: 'Reduced operational costs by 20% by implementing cloud-native practices within a year.'
+  },
+  {
+    name: 'Uptime Optimisation through Automation',
+    description: 'Increased service uptime to 99.9% by spearheading automation initiatives and leading a cross-functional team of 40 engineers.'
+  }
 ]
 
 export interface SkillData {
@@ -74,7 +88,7 @@ export const education: EducationData[] = [
 export const summary: string[] = [
   "I'm an experienced and collaborative technology leader with a strong engineering and architecture background and over eighteen years of experience in the Information Technology industry.",
   "Known for building and leading high performing, diverse teams and fostering cultures of excellence, accountability, and innovation in government, manufacturing, identity, finance, telecommunication and AI industries with a focus on delivering exceptional outcomes and customer value.",
-  "Passionate about mentoring talent, enhancing customer outcomes and leading by example to drive digital, agile and culture transformation whiling excelling at aligning technology strategy with business goals, removing delivery blockers, and enabling teams to execute with autonomy and clarity.",
+  "Passionate about mentoring talent, enhancing customer outcomes and leading by example to drive digital, agile and culture transformation while excelling at aligning technology strategy with business goals, removing delivery blockers, and enabling teams to execute with autonomy and clarity.",
   "Energised by complex challenges, senior stakeholder engagement, and environments where purpose-driven teams solve problems that matter."
 ];
 
