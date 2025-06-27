@@ -65,10 +65,10 @@ To preview how your resume will appear when printed:
 1.	Open your app in Chrome at http://localhost:3000
 2.	Press Cmd + P (macOS) or Ctrl + P (Windows)
 3.	In the print preview window:
-•	Change the destination to “Save as PDF” or your printer
-•	Set margins to “None” or “Custom”
-•	Toggle Background graphics if your theme uses background colours
-•	Click “More settings” and select appropriate scale
+- Change the destination to “Save as PDF” or your printer
+- Set margins to “None” or “Custom”
+- Toggle Background graphics if your theme uses background colours
+- Click “More settings” and select appropriate scale
 
 To Test with DevTools
 1.	Right-click → Inspect Element
@@ -83,13 +83,13 @@ This forces the @media print styles to render in your browser without triggering
 ## 🧩 Component Structure
 
 All sections are in components/, structured into modular units:
-•	Authentication.tsx – handles login/logout via Auth0
-•	Banner.tsx – layout header containing auth + theme switcher
-•	Panel.tsx – reusable panel container
-•	ThemeChanger.tsx – dropdown for toggling themes
-•	Summary, Experiences, Skills, Education, Certifications – each render a portion of the resume
-•	Profile.tsx – pulls user metadata (GitHub, LinkedIn, etc.) from Auth0
-•	Name.tsx – renders the logged-in user’s name
+- Authentication.tsx – handles login/logout via Auth0
+- Banner.tsx – layout header containing auth + theme switcher
+- Panel.tsx – reusable panel container
+- ThemeChanger.tsx – dropdown for toggling themes
+- Summary, Experiences, Skills, Education, Certifications – each render a portion of the resume
+- Profile.tsx – pulls user metadata (GitHub, LinkedIn, etc.) from Auth0
+- Name.tsx – renders the logged-in user’s name
 
 Print styling is defined in styles/globals.css and individual Component.module.css files.
 
@@ -112,9 +112,9 @@ resume-generator/
 ## 📦 Dependencies
 
 Key packages include:
-•	next, react, react-dom – core framework and rendering
-•	@auth0/auth0-react – authentication
-•	next-themes – theme switching
-•	react-icons – icon support
-•	@testing-library/* – test support (placeholder; tests not implemented)
+- next, react, react-dom – core framework and rendering
+- @auth0/auth0-react – authentication
+- next-themes – theme switching
+- react-icons – icon support
+- @testing-library/* – test support (placeholder; tests not implemented)
 
