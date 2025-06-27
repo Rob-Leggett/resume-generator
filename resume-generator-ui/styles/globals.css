@@ -1,5 +1,5 @@
 body {
-    margin: 2em;
+    margin: 0.5em 2em;
 }
 
 /* ========== COMMON STYLES FOR 'modern' THEME ========== */
@@ -236,11 +236,8 @@ body {
     }
 
     [data-theme='modern'] .flex-container {
-        display: flex !important;
-        flex-direction: row !important;
         align-items: flex-start !important;
         width: 100% !important;
-        gap: 0 !important;
         box-sizing: border-box !important;
         page-break-before: avoid !important;
     }
@@ -272,6 +269,11 @@ body {
     }
 
     /* Fix heading size */
+    [data-theme='modern'] .name-msg {
+        font-size: 40pt !important;
+    }
+
+    /* Fix heading size */
     [data-theme='modern'] .profile-header,
     [data-theme='modern'] .certification-header,
     [data-theme='modern'] .skills-header,
@@ -291,6 +293,16 @@ body {
         margin-block-end: 0 !important;
     }
 
+    /* Fix heading size */
+    [data-theme='modern'] .profile-data,
+    [data-theme='modern'] .certification-data,
+    [data-theme='modern'] .skills-data,
+    [data-theme='modern'] .achievements-data,
+    [data-theme='modern'] .education-data {
+        padding-left: 0;
+        font-size: x-small !important;
+    }
+
     /* Fix content size */
     [data-theme='modern'] .summary-data,
     [data-theme='modern'] .experiences-description-data {
@@ -307,11 +319,5 @@ body {
         page-break-inside: avoid !important;
     }
 
-    /* Prevent extra blank pages */
-    * {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-        page-break-before: auto !important;
-        page-break-after: auto !important;
-    }
+
 }

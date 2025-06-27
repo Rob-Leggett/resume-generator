@@ -2,6 +2,12 @@
     display: flex;
 }
 
+@media print {
+    .bannerContainer {
+        display: none !important;
+    }
+}
+
 /* Apply theme override using global selectors for the outer elements, and local for the component */
 :global([data-theme='modern']) .bannerContainer {
     justify-content: space-between;
