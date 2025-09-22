@@ -34,16 +34,32 @@ export interface AchievementData {
 
 export const achievements: AchievementData[] = [
   {
-    name: 'Improved Platform Resilience',
-    description: 'Achieved a 35% increase in platform reliability by leading the integration of core enterprise systems in 2024.'
+    name: 'QA Automation & PCI Compliance',
+    description: 'Delivered a commander–worker QA automation framework at Coles, achieving PCI compliance and cutting 734 tester-days annually (~$570K saved).'
   },
   {
-    name: 'Operational Cost Reduction',
-    description: 'Reduced operational costs by 20% by implementing cloud-native practices within a year.'
+    name: 'Operational Efficiency Gains',
+    description: 'Eliminated 200 hours/year of manual deployment through automation, freeing engineers for higher-value delivery.'
   },
   {
-    name: 'Uptime Optimisation through Automation',
-    description: 'Increased service uptime to 99.9% by spearheading automation initiatives and leading a cross-functional team of 40 engineers.'
+    name: 'Cloud Strategy for Computer Vision AI',
+    description: 'Transformed a 3-year prototype into a compliant cloud-based Computer Vision AI product at TRU Recognition, delivering first customer deployment and roadmap for scale, cost, and resilience.'
+  },
+  {
+    name: 'Edge & Cloud Hybrid Architecture',
+    description: 'Built an edge + SaaS architecture for real-time AI insights with PII compliance, cutting infra/ops costs by ~$972K/year and removing reliance on GPU-heavy data centres.'
+  },
+  {
+    name: 'Identity Platform Transformation',
+    description: 'Replaced Auth0 with Google Identity Platform at PaperCut, enabling multi-tenant SaaS scale from thousands to millions of users.'
+  },
+  {
+    name: 'Cost Optimisation at Scale',
+    description: 'Redesigned identity architecture, reducing costs from USD 20M/month to USD 30K/month — saving >USD 200M annually.'
+  },
+  {
+    name: 'Established Architecture Practice',
+    description: 'Created PaperCut’s first architecture practice, setting standards, governance, and mentoring engineers to uplift architectural maturity.'
   }
 ]
 
@@ -63,7 +79,11 @@ export const skills: SkillData[] = [
   },
   {
     type: 'Engineering',
-    description: 'Development, Delivery, Finance, Compliance, Identity, Agile'
+    description: 'Development, Delivery, DevSecOps, Automation, Finance, Compliance, Identity, Agile'
+  },
+  {
+    type: 'AI',
+    description: 'Computer Vision'
   },
   {
     type: 'Environments',
@@ -102,7 +122,7 @@ export interface ExperienceData {
 export const experiences: ExperienceData[] = [
   {
     role: 'Head of Technology',
-    period: '2024 – Now',
+    period: '2024 – 2025',
     company: 'TRU Recognition',
     description: [
       'A visionary and results-driven technology leader with a proven track record in defining and executing technical roadmaps that align with business goals to drive scalability, security, and long-term sustainability.',

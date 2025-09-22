@@ -184,6 +184,7 @@ body {
 
 [data-theme='modern'] .summary-item {
     margin-bottom: 0;
+    margin-top: 5px;
 }
 
 /* Experiences */
@@ -258,6 +259,7 @@ body {
         text-align: left !important;
         overflow-wrap: break-word !important;
         word-break: break-word !important;
+        padding-right: 7px !important;
     }
 
     /* Hide UI elements */
@@ -271,6 +273,10 @@ body {
     /* Fix heading size */
     [data-theme='modern'] .name-msg {
         font-size: 40pt !important;
+    }
+
+    [data-theme='modern'] .profile-img {
+        max-width: 220px;
     }
 
     /* Fix heading size */
@@ -306,7 +312,7 @@ body {
     /* Fix content size */
     [data-theme='modern'] .summary-data,
     [data-theme='modern'] .experiences-description-data {
-        font-size: small;
+        font-size: 11pt;
     }
 
     /* Prevent content splitting */
@@ -318,6 +324,4 @@ body {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
     }
-
-
 }
