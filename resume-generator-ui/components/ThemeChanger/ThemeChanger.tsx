@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
+import { useResumeTheme } from '../../src/contexts';
 import styles from './ThemeChanger.module.css';
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, themes, setTheme } = useTheme();
+  const { themeName, availableThemes, setTheme } = useResumeTheme();
 
   useEffect(() => setMounted(true), []);
 
@@ -17,12 +17,12 @@ const ThemeChanger = () => {
   return (
     <div className={styles.themeContainer}>
       <span className="theme-selector">
-        <span className="theme-msg">Resume Theme:</span>
+        <span className="theme-msg">Theme:</span>
         <span className="select-dropdown">
-          <select value={theme} onChange={(e) => handleSelect(e.target.value)}>
-            {themes.map((t) => (
-              <option key={t} value={t}>
-                {t}
+          <select value={themeName} onChange={(e) => handleSelect(e.target.value)}>
+            {availableThemes.map((t) => (
+              <option key={t.name} value={t.name}>
+                {t.displayName}
               </option>
             ))}
           </select>

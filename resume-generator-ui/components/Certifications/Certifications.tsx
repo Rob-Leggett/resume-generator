@@ -1,9 +1,11 @@
 import styles from './Certifications.module.css';
-import { CertificationData, certifications } from '../../src/config/content';
 import { useAuth0, User } from '@auth0/auth0-react';
+import { useResumeData } from '../../src/contexts';
+import { CertificationData } from '../../src/types';
 
 const Certifications = () => {
   const { user, isLoading, error } = useAuth0<User>();
+  const { data } = useResumeData();
 
   if (isLoading) {
     return <div className="loading">Loading Certifications</div>;
@@ -30,7 +32,7 @@ const Certifications = () => {
   return (
     <div className={styles.certificationsContainer}>
       <p className="certification-header">Certifications</p>
-      {user ? certifications.map(renderCertificationData) : null}
+      {user ? data.certifications.map(renderCertificationData) : null}
     </div>
   );
 };

@@ -1,10 +1,12 @@
 import styles from './Experiences.module.css';
-import { ExperienceData, experiences } from '../../src/config/content';
 import { renderIcon } from '../Icons/Icons';
 import { useAuth0, User } from '@auth0/auth0-react';
+import { useResumeData } from '../../src/contexts';
+import { ExperienceData } from '../../src/types';
 
 const Experiences = () => {
   const { user, isLoading, error } = useAuth0<User>();
+  const { data } = useResumeData();
 
   if (isLoading) {
     return <div className="loading">Loading Experiences</div>;
@@ -32,7 +34,7 @@ const Experiences = () => {
   return (
     <div className={styles.experiencesContainer}>
       <p className="experiences-header">Experiences</p>
-      {user ? experiences.map(renderExperienceData) : null}
+      {user ? data.experiences.map(renderExperienceData) : null}
     </div>
   );
 };

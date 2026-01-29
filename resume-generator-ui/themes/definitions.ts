@@ -1,0 +1,119 @@
+import { ThemeDefinition } from '../src/types/resume';
+
+export const themes: Record<string, ThemeDefinition> = {
+  modern: {
+    name: 'modern',
+    displayName: 'Modern',
+    colors: {
+      primary: '#222222',
+      secondary: '#666666',
+      background: '#ffffff',
+      surface: '#f7f7f7',
+      text: '#222222',
+      textSecondary: '#666666',
+      accent: '#0066cc',
+      link: 'mediumblue',
+      border: '#e0e0e0',
+      error: '#dc3545',
+    },
+    typography: {
+      fontFamily: 'Arial, Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif',
+      fontFamilyHeading: 'Arial, Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif',
+      baseFontSize: '16px',
+      headingScale: 1.25,
+    },
+    spacing: {
+      unit: '8px',
+      panelPadding: '20px',
+      sectionGap: '16px',
+    },
+    borderRadius: '8px',
+  },
+  classic: {
+    name: 'classic',
+    displayName: 'Classic',
+    colors: {
+      primary: '#1a1a1a',
+      secondary: '#4a4a4a',
+      background: '#fffef9',
+      surface: '#f5f4ef',
+      text: '#1a1a1a',
+      textSecondary: '#4a4a4a',
+      accent: '#8b0000',
+      link: '#00008b',
+      border: '#d4d0c8',
+      error: '#8b0000',
+    },
+    typography: {
+      fontFamily: 'Georgia, "Times New Roman", Times, serif',
+      fontFamilyHeading: 'Georgia, "Times New Roman", Times, serif',
+      baseFontSize: '16px',
+      headingScale: 1.2,
+    },
+    spacing: {
+      unit: '8px',
+      panelPadding: '24px',
+      sectionGap: '20px',
+    },
+    borderRadius: '4px',
+  },
+  minimal: {
+    name: 'minimal',
+    displayName: 'Minimal',
+    colors: {
+      primary: '#000000',
+      secondary: '#888888',
+      background: '#ffffff',
+      surface: '#fafafa',
+      text: '#000000',
+      textSecondary: '#888888',
+      accent: '#000000',
+      link: '#000000',
+      border: '#eeeeee',
+      error: '#ff0000',
+    },
+    typography: {
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      fontFamilyHeading: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      baseFontSize: '15px',
+      headingScale: 1.15,
+    },
+    spacing: {
+      unit: '6px',
+      panelPadding: '16px',
+      sectionGap: '12px',
+    },
+    borderRadius: '0px',
+  },
+  dark: {
+    name: 'dark',
+    displayName: 'Dark',
+    colors: {
+      primary: '#ffffff',
+      secondary: '#b0b0b0',
+      background: '#1a1a1a',
+      surface: '#2d2d2d',
+      text: '#ffffff',
+      textSecondary: '#b0b0b0',
+      accent: '#60a5fa',
+      link: '#60a5fa',
+      border: '#404040',
+      error: '#ef4444',
+    },
+    typography: {
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      fontFamilyHeading: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
+      baseFontSize: '16px',
+      headingScale: 1.25,
+    },
+    spacing: {
+      unit: '8px',
+      panelPadding: '20px',
+      sectionGap: '16px',
+    },
+    borderRadius: '8px',
+  },
+};
+
+export const themeNames = Object.keys(themes);
+export const defaultTheme = 'modern';

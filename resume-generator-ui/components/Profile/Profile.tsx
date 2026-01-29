@@ -6,6 +6,8 @@ import styles from './Profile.module.css';
 
 interface UserMetadata {
   mobile?: string;
+  email?: string;
+  website_url?: string;
   blog_url?: string;
   github_url?: string;
   linkedin_url?: string;
@@ -86,9 +88,9 @@ const Profile = () => {
     <div className={styles.profileContainer}>
       {user.picture && (<img className="profile-img" src={user.picture} alt={user.name || 'Profile'} />)}
       <p className="profile-header">Contact</p>
-      {renderProfileData({ icon: 'MdEmail', label: 'Email:', value: user.email })}
+      {renderProfileData({ icon: 'MdEmail', label: 'Email:', value: userMetadata?.email })}
       {renderProfileData({ icon: 'FaPhoneAlt', label: 'Mobile:', value: userMetadata?.mobile })}
-      {renderProfileLink({ icon: 'CgWebsite', label: 'Blog:', value: userMetadata?.blog_url })}
+      {renderProfileLink({ icon: 'CgWebsite', label: 'Blog:', value: userMetadata?.website_url })}
       {renderProfileLink({ icon: 'FaGithub', label: 'GitHub:', value: userMetadata?.github_url })}
       {renderProfileLink({ icon: 'FaLinkedin', label: 'LinkedIn:', value: userMetadata?.linkedin_url })}
     </div>

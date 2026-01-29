@@ -1,44 +1,66 @@
+/* CSS Custom Properties - Theme Variables */
+:root {
+    --color-primary: #222222;
+    --color-secondary: #666666;
+    --color-background: #ffffff;
+    --color-surface: #f7f7f7;
+    --color-text: #222222;
+    --color-text-secondary: #666666;
+    --color-accent: #0066cc;
+    --color-link: mediumblue;
+    --color-border: #e0e0e0;
+    --color-error: #dc3545;
+    --font-family: Arial, Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    --font-family-heading: Arial, Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    --font-size-base: 16px;
+    --heading-scale: 1.25;
+    --spacing-unit: 8px;
+    --spacing-panel: 20px;
+    --spacing-section: 16px;
+    --border-radius: 8px;
+}
+
 body {
     margin: 0.5em 2em;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
 }
 
-/* ========== COMMON STYLES FOR 'modern' THEME ========== */
-
-[data-theme='modern'] {
-    font-family: Arial, Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-}
+/* ========== COMMON STYLES - Theme-aware ========== */
 
 /* Layout */
-[data-theme='modern'] .flex-container {
+.flex-container {
     display: flex;
 }
 
-[data-theme='modern'] .flex-container .left-panel {
+.flex-container .left-panel {
     width: 80%;
 }
 
-[data-theme='modern'] .flex-container .right-panel {
+.flex-container .right-panel {
     width: 20%;
 }
 
 /* Utility */
-[data-theme='modern'] .loading {}
+.loading {}
 
-[data-theme='modern'] .error {
-    color: red;
+.error {
+    color: var(--color-error);
 }
 
-[data-theme='modern'] .spacer {
+.spacer {
     padding-left: 3px;
 }
 
 /* Buttons */
-[data-theme='modern'] .button {
-    background-color: #fff;
-    border: 1px solid #222;
-    border-radius: 8px;
+.button {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius);
     box-sizing: border-box;
-    color: #222;
+    color: var(--color-primary);
     cursor: pointer;
     display: inline-block;
     font-size: 16px;
@@ -50,168 +72,199 @@ body {
     user-select: none;
 }
 
-[data-theme='modern'] .button:focus-visible {
-    box-shadow: #222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+.button:focus-visible {
+    box-shadow: var(--color-primary) 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
 }
 
-[data-theme='modern'] .button:active {
-    background-color: #f7f7f7;
-    border-color: #000;
+.button:active {
+    background-color: var(--color-surface);
+    border-color: var(--color-primary);
     transform: scale(0.96);
 }
 
-[data-theme='modern'] .button:disabled {
-    border-color: #ddd;
-    color: #ddd;
+.button:disabled {
+    border-color: var(--color-border);
+    color: var(--color-border);
     cursor: not-allowed;
 }
 
 /* Dropdowns */
-[data-theme='modern'] .select-dropdown,
-[data-theme='modern'] .select-dropdown * {
+.select-dropdown,
+.select-dropdown * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-[data-theme='modern'] .select-dropdown {
-    background-color: #e6e6e6;
+.select-dropdown {
+    background-color: var(--color-surface);
     border-radius: 4px;
     padding: 5px;
     position: relative;
 }
 
-[data-theme='modern'] .select-dropdown:after {
+.select-dropdown:after {
     content: "";
     position: absolute;
     top: 50%;
     right: 8px;
     margin-top: -2px;
-    border-top: 5px solid #aaa;
+    border-top: 5px solid var(--color-secondary);
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
 }
 
-[data-theme='modern'] .select-dropdown select:focus,
-[data-theme='modern'] .select-dropdown select:active {
+.select-dropdown select:focus,
+.select-dropdown select:active {
     outline: none;
     box-shadow: none;
 }
 
 /* Theme Changer */
-[data-theme='modern'] .theme-msg,
-[data-theme='modern'] .authentication-msg {
+.theme-msg,
+.authentication-msg {
     font-size: 12pt;
     line-height: 20px;
     padding-right: 10px;
 }
 
-[data-theme='modern'] .theme-selector select {
+.theme-selector select {
     font-size: 1rem;
     padding: 8px 24px 8px 10px;
     border: none;
     background-color: transparent;
     appearance: none;
+    color: var(--color-text);
 }
 
 /* Name Header */
-[data-theme='modern'] .name-msg {
+.name-msg {
     font-size: 46pt;
+    font-family: var(--font-family-heading);
     text-align: right;
     padding: 40px 40px 5px 0;
-    border-bottom: 10px #fff solid;
+    border-bottom: 10px var(--color-background) solid;
     width: 80%;
 }
 
 /* Profile */
-[data-theme='modern'] .profile-img {
+.profile-img {
     width: -webkit-fill-available;
     max-width: 300px;
 }
 
-[data-theme='modern'] .profile-header,
-[data-theme='modern'] .certification-header,
-[data-theme='modern'] .skills-header,
-[data-theme='modern'] .achievements-header,
-[data-theme='modern'] .education-header {
+.profile-header,
+.certification-header,
+.skills-header,
+.achievements-header,
+.education-header {
     font-size: 20pt;
     font-weight: bold;
+    font-family: var(--font-family-heading);
+    color: var(--color-primary);
 }
 
-[data-theme='modern'] .profile-data,
-[data-theme='modern'] .certification-data,
-[data-theme='modern'] .skills-data,
-[data-theme='modern'] .achievements-data,
-[data-theme='modern'] .education-data {
+.profile-data,
+.certification-data,
+.skills-data,
+.achievements-data,
+.education-data {
     padding-left: 10px;
     font-size: small;
     margin-block-start: 2px;
     margin-block-end: 0;
 }
 
-[data-theme='modern'] .profile-item,
-[data-theme='modern'] .certification-item,
-[data-theme='modern'] .skills-item,
-[data-theme='modern'] .achievements-item,
-[data-theme='modern'] .education-item {
+.profile-item,
+.certification-item,
+.skills-item,
+.achievements-item,
+.education-item {
     margin-top: 5px;
     margin-bottom: 0;
 }
 
-[data-theme='modern'] .profile-link,
-[data-theme='modern'] .certification-link {
+.profile-link,
+.certification-link {
     text-decoration: none;
-    color: mediumblue;
+    color: var(--color-link);
     word-wrap: break-word;
 }
 
 /* Certification */
-[data-theme='modern'] .certification-link {
+.certification-link {
     margin-top: 5px;
 }
 
 /* Summary */
-[data-theme='modern'] .summary-header,
-[data-theme='modern'] .experiences-header {
+.summary-header,
+.experiences-header {
     font-size: 24pt;
     font-weight: bold;
+    font-family: var(--font-family-heading);
+    color: var(--color-primary);
 }
 
-[data-theme='modern'] .summary-data {
+.summary-data {
     padding-left: 30px;
     font-size: medium;
 }
 
-[data-theme='modern'] .summary-item {
+.summary-item {
     margin-bottom: 0;
     margin-top: 5px;
 }
 
 /* Experiences */
-[data-theme='modern'] .experiences-description-data {
+.experiences-description-data {
     padding: 0 50px 0 30px;
     font-size: medium;
     margin-block-start: 5px;
     margin-block-end: 0;
 }
 
-[data-theme='modern'] .experiences-role-header {
+.experiences-role-header {
     font-size: 18pt;
     font-weight: bold;
+    font-family: var(--font-family-heading);
     margin-block-end: 0;
 }
 
-[data-theme='modern'] .experiences-period-header {
+.experiences-period-header {
     font-size: 12pt;
+    color: var(--color-secondary);
     margin-block-start: 2px;
     margin-block-end: 0;
 }
 
-[data-theme='modern'] .experiences-company-header {
+.experiences-company-header {
     font-size: 14pt;
     font-weight: bold;
+    color: var(--color-secondary);
     margin-block-start: 2px;
     margin-block-end: 0;
+}
+
+/* Template selector */
+.template-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.template-msg {
+    font-size: 12pt;
+    line-height: 20px;
+    padding-right: 10px;
+}
+
+/* ========== LEGACY THEME SELECTORS (for backwards compatibility) ========== */
+
+[data-theme='modern'],
+[data-theme='classic'],
+[data-theme='minimal'],
+[data-theme='dark'] {
+    /* Theme variables are injected via JavaScript */
 }
 
 /* ========== PRINT STYLES ========== */
@@ -229,32 +282,29 @@ body {
         page-break-before: avoid !important;
     }
 
-    [data-theme='modern'] {
-        background: white !important;
-        color: black !important;
+    body {
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-        page-break-before: avoid !important;
     }
 
-    [data-theme='modern'] .flex-container {
+    .flex-container {
         align-items: flex-start !important;
         width: 100% !important;
         box-sizing: border-box !important;
         page-break-before: avoid !important;
     }
 
-    [data-theme='modern'] .left-panel,
-    [data-theme='modern'] .right-panel {
+    .left-panel,
+    .right-panel {
         box-sizing: border-box !important;
         page-break-before: avoid !important;
     }
 
-    [data-theme='modern'] .left-panel {
+    .left-panel {
         width: 70% !important;
         padding: 5px !important;
     }
 
-    [data-theme='modern'] .right-panel {
+    .right-panel {
         width: 30% !important;
         text-align: left !important;
         overflow-wrap: break-word !important;
@@ -263,65 +313,76 @@ body {
     }
 
     /* Hide UI elements */
-    [data-theme='modern'] .button,
-    [data-theme='modern'] .select-dropdown,
-    [data-theme='modern'] .theme-selector,
-    [data-theme='modern'] .authentication-msg {
+    .button,
+    .select-dropdown,
+    .theme-selector,
+    .template-selector,
+    .authentication-msg {
         display: none !important;
     }
 
     /* Fix heading size */
-    [data-theme='modern'] .name-msg {
+    .name-msg {
         font-size: 40pt !important;
+        color: black !important;
     }
 
-    [data-theme='modern'] .profile-img {
+    .profile-img {
         max-width: 220px;
     }
 
     /* Fix heading size */
-    [data-theme='modern'] .profile-header,
-    [data-theme='modern'] .certification-header,
-    [data-theme='modern'] .skills-header,
-    [data-theme='modern'] .achievements-header,
-    [data-theme='modern'] .education-header {
+    .profile-header,
+    .certification-header,
+    .skills-header,
+    .achievements-header,
+    .education-header {
         font-size: 14pt;
+        color: black !important;
     }
 
     /* Fix heading alignment */
-    [data-theme='modern'] .summary-header,
-    [data-theme='modern'] .experiences-header,
-    [data-theme='modern'] .experiences-role-header,
-    [data-theme='modern'] .experiences-period-header,
-    [data-theme='modern'] .experiences-company-header {
+    .summary-header,
+    .experiences-header,
+    .experiences-role-header,
+    .experiences-period-header,
+    .experiences-company-header {
         text-align: left !important;
         padding-right: 0 !important;
         margin-block-end: 0 !important;
+        color: black !important;
     }
 
     /* Fix heading size */
-    [data-theme='modern'] .profile-data,
-    [data-theme='modern'] .certification-data,
-    [data-theme='modern'] .skills-data,
-    [data-theme='modern'] .achievements-data,
-    [data-theme='modern'] .education-data {
+    .profile-data,
+    .certification-data,
+    .skills-data,
+    .achievements-data,
+    .education-data {
         padding-left: 0;
         font-size: x-small !important;
+        color: black !important;
     }
 
     /* Fix content size */
-    [data-theme='modern'] .summary-data,
-    [data-theme='modern'] .experiences-description-data {
+    .summary-data,
+    .experiences-description-data {
         font-size: 11pt;
+        color: black !important;
     }
 
     /* Prevent content splitting */
-    [data-theme='modern'] .summary-item,
-    [data-theme='modern'] .experiences-item,
-    [data-theme='modern'] .skills-item,
-    [data-theme='modern'] .achievements-item,
-    [data-theme='modern'] .education-item {
+    .summary-item,
+    .experiences-item,
+    .skills-item,
+    .achievements-item,
+    .education-item {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
+    }
+
+    .profile-link,
+    .certification-link {
+        color: black !important;
     }
 }

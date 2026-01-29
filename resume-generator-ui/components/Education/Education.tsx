@@ -1,9 +1,11 @@
 import styles from './Education.module.css';
-import { education, EducationData } from '../../src/config/content';
 import { useAuth0, User } from '@auth0/auth0-react';
+import { useResumeData } from '../../src/contexts';
+import { EducationData } from '../../src/types';
 
 const Education = () => {
   const { user, isLoading, error } = useAuth0<User>();
+  const { data } = useResumeData();
 
   if (isLoading) {
     return <div className="loading">Loading Education</div>;
@@ -24,7 +26,7 @@ const Education = () => {
   return (
     <div className={styles.educationContainer}>
       <p className="education-header">Education</p>
-      {user ? education.map(renderEducationData): null}
+      {user ? data.education.map(renderEducationData): null}
     </div>
   );
 };

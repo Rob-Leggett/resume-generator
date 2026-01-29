@@ -1,9 +1,11 @@
 import styles from './Skills.module.css';
-import { SkillData, skills } from '../../src/config/content';
 import { useAuth0, User } from '@auth0/auth0-react';
+import { useResumeData } from '../../src/contexts';
+import { SkillData } from '../../src/types';
 
 const Skills = () => {
   const { user, isLoading, error } = useAuth0<User>();
+  const { data } = useResumeData();
 
   if (isLoading) {
     return <div className="loading">Loading Skills</div>;
@@ -23,7 +25,7 @@ const Skills = () => {
   return (
     <div className={styles.skillsContainer}>
       <p className="skills-header">Skills</p>
-      {user ? skills.map(renderSkillData) : null}
+      {user ? data.skills.map(renderSkillData) : null}
     </div>
   );
 };

@@ -1,9 +1,11 @@
-import { AchievementData, achievements } from '../../src/config/content';
 import { useAuth0, User } from '@auth0/auth0-react';
+import { useResumeData } from '../../src/contexts';
+import { AchievementData } from '../../src/types';
 import styles from './Achievements.module.css';
 
 const Achievements = () => {
   const { user, isLoading, error } = useAuth0<User>();
+  const { data } = useResumeData();
 
   if (isLoading) {
     return <div className="loading">Loading Achievements</div>;
@@ -23,7 +25,7 @@ const Achievements = () => {
   return (
     <div className={styles.achievementsContainer}>
       <p className="achievements-header">Key Achievements</p>
-      {user ? achievements.map(renderAchievementData) : null}
+      {user ? data.achievements.map(renderAchievementData) : null}
     </div>
   );
 };

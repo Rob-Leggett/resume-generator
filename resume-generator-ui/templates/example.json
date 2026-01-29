@@ -1,0 +1,89 @@
+{
+  "profile": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "mobile": "+1 555-123-4567",
+    "website": "https://janedoe.dev",
+    "github": "https://github.com/janedoe",
+    "linkedin": "https://linkedin.com/in/janedoe",
+    "picture": ""
+  },
+  "summary": [
+    "Full-stack software engineer with 8+ years of experience building scalable web applications and leading cross-functional teams.",
+    "Passionate about clean code, developer experience, and mentoring junior engineers.",
+    "Experienced in agile methodologies with a track record of delivering complex projects on time and within budget."
+  ],
+  "experiences": [
+    {
+      "role": "Senior Software Engineer",
+      "period": "2021 – Present",
+      "company": "Tech Startup Inc",
+      "description": [
+        "Lead development of the company's flagship SaaS platform serving 50K+ users.",
+        "Architected microservices infrastructure reducing deployment time by 60%.",
+        "Mentored team of 5 junior developers through code reviews and pair programming."
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "period": "2017 – 2021",
+      "company": "Enterprise Corp",
+      "description": [
+        "Developed RESTful APIs and React frontends for internal tools.",
+        "Implemented CI/CD pipelines using GitHub Actions and Docker.",
+        "Collaborated with product team to define technical requirements."
+      ]
+    },
+    {
+      "role": "Junior Developer",
+      "period": "2015 – 2017",
+      "company": "Web Agency LLC",
+      "description": [
+        "Built responsive websites for clients using modern web technologies.",
+        "Participated in agile sprints and daily standups."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "type": "Languages",
+      "description": "TypeScript, JavaScript, Python, Go, SQL"
+    },
+    {
+      "type": "Frontend",
+      "description": "React, Next.js, Vue, Tailwind CSS"
+    },
+    {
+      "type": "Backend",
+      "description": "Node.js, Express, FastAPI, PostgreSQL, Redis"
+    },
+    {
+      "type": "DevOps",
+      "description": "Docker, Kubernetes, AWS, GitHub Actions, Terraform"
+    }
+  ],
+  "education": [
+    {
+      "school": "State University",
+      "name": "Bachelor of Science in Computer Science",
+      "date": "2011 – 2015"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Developer - Associate",
+      "date": "2022 – 2025",
+      "badgeUrl": "https://www.credly.com/badges/example"
+    }
+  ],
+  "achievements": [
+    {
+      "name": "Performance Optimization",
+      "description": "Reduced API response time by 40% through database query optimization."
+    },
+    {
+      "name": "Open Source Contribution",
+      "description": "Maintainer of popular npm package with 10K+ weekly downloads."
+    }
+  ]
+}

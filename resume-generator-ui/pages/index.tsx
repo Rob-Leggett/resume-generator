@@ -5,6 +5,7 @@ import Certifications from '../components/Certifications/Certifications';
 import Panel from '../components/Panel/Panel';
 import Profile from '../components/Profile/Profile';
 import ThemeChanger from '../components/ThemeChanger/ThemeChanger';
+import TemplateChanger from '../components/TemplateChanger/TemplateChanger';
 import Name from '../components/Name/Name';
 import Summary from '../components/Summary/Summary';
 import Experiences from '../components/Experiences/Experiences';
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <div className="flex-container">
         <Banner>
+          <TemplateChanger />
           <ThemeChanger />
           <Authentication />
         </Banner>

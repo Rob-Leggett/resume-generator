@@ -35,11 +35,11 @@ export interface AchievementData {
 export const achievements: AchievementData[] = [
   {
     name: 'QA Automation & PCI Compliance',
-    description: 'Delivered a commander–worker QA automation framework at Coles, achieving PCI compliance and cutting 734 tester-days annually (~$570K saved).'
+    description: 'Delivered a commander–worker QA automation framework at Coles, achieving PCI compliance and cutting 764 tester-hours annually (~$570K saved).'
   },
   {
     name: 'Operational Efficiency Gains',
-    description: 'Eliminated 200 hours/year of manual deployment through automation, freeing engineers for higher-value delivery.'
+    description: 'Eliminated 200 servers of manual deployment through automation, freeing engineers for higher-value delivery.'
   },
   {
     name: 'Cloud Strategy for Computer Vision AI',
