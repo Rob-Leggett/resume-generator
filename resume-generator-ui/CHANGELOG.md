@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Rob-Leggett/resume-generator/compare/v1.0.0...v1.0.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* updated configuration ([59a657e](https://github.com/Rob-Leggett/resume-generator/commit/59a657e9432cc6651dd165fa9cfe2810916cb9ca))
+
 # 1.0.0 (2026-01-30)
 
 
