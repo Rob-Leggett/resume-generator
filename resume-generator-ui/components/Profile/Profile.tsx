@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useAuth0, User } from '@auth0/auth0-react';
+import Image from 'next/image';
 import configuration from '../../src/config/constants';
 import { renderIcon } from '../Icons/Icons';
 import styles from './Profile.module.css';
@@ -11,6 +12,7 @@ interface UserMetadata {
   blog_url?: string;
   github_url?: string;
   linkedin_url?: string;
+  picture?: string;
 }
 
 interface ProfileItem {
@@ -84,11 +86,23 @@ const Profile = () => {
     return null;
   }
 
+  const profileImage = userMetadata?.picture || user.picture;
+  
   return (
     <div className={styles.profileContainer}>
-      {user.picture && (<img className="profile-img" src={user.picture} alt={user.name || 'Profile'} />)}
+      {profileImage && (
+        <Image 
+          className="profile-img" 
+          src={profileImage}
+          alt={user.name || 'Profile'} 
+          width={300}
+          height={300}
+          unoptimized
+          style={{ width: '100%', height: 'auto', maxWidth: '300px' }}
+        />
+      )}
       <p className="profile-header">Contact</p>
-      {renderProfileData({ icon: 'MdEmail', label: 'Email:', value: userMetadata?.email })}
+      {renderProfileData({ icon: 'MdEmail', label: 'Email:', value: userMetadata?.email || user.email })}
       {renderProfileData({ icon: 'FaPhoneAlt', label: 'Mobile:', value: userMetadata?.mobile })}
       {renderProfileLink({ icon: 'CgWebsite', label: 'Blog:', value: userMetadata?.website_url })}
       {renderProfileLink({ icon: 'FaGithub', label: 'GitHub:', value: userMetadata?.github_url })}

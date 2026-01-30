@@ -6,6 +6,7 @@
     --color-surface: #f7f7f7;
     --color-text: #222222;
     --color-text-secondary: #666666;
+    --color-heading: #222222;
     --color-accent: #0066cc;
     --color-link: mediumblue;
     --color-border: #e0e0e0;
@@ -21,7 +22,7 @@
 }
 
 body {
-    margin: 0.5em 2em;
+    margin: 2em;
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-family);
@@ -72,6 +73,10 @@ body {
     user-select: none;
 }
 
+.button:hover {
+    background-color: var(--color-surface);
+}
+
 .button:focus-visible {
     box-shadow: var(--color-primary) 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
 }
@@ -86,6 +91,11 @@ body {
     border-color: var(--color-border);
     color: var(--color-border);
     cursor: not-allowed;
+}
+
+.export-button {
+    padding: 8px 16px;
+    font-size: 14px;
 }
 
 /* Dropdowns */
@@ -142,15 +152,16 @@ body {
     font-size: 46pt;
     font-family: var(--font-family-heading);
     text-align: right;
-    padding: 40px 40px 5px 0;
+    padding: 10px 40px 5px 0;
     border-bottom: 10px var(--color-background) solid;
     width: 80%;
 }
 
 /* Profile */
 .profile-img {
-    width: -webkit-fill-available;
+    width: 100%;
     max-width: 300px;
+    height: auto;
 }
 
 .profile-header,
@@ -161,7 +172,7 @@ body {
     font-size: 20pt;
     font-weight: bold;
     font-family: var(--font-family-heading);
-    color: var(--color-primary);
+    color: var(--color-heading);
 }
 
 .profile-data,
@@ -202,7 +213,7 @@ body {
     font-size: 24pt;
     font-weight: bold;
     font-family: var(--font-family-heading);
-    color: var(--color-primary);
+    color: var(--color-heading);
 }
 
 .summary-data {
@@ -228,11 +239,12 @@ body {
     font-weight: bold;
     font-family: var(--font-family-heading);
     margin-block-end: 0;
+    color: var(--color-heading);
 }
 
 .experiences-period-header {
     font-size: 12pt;
-    color: var(--color-secondary);
+    color: var(--color-heading);
     margin-block-start: 2px;
     margin-block-end: 0;
 }
@@ -240,7 +252,7 @@ body {
 .experiences-company-header {
     font-size: 14pt;
     font-weight: bold;
-    color: var(--color-secondary);
+    color: var(--color-heading);
     margin-block-start: 2px;
     margin-block-end: 0;
 }
@@ -269,120 +281,298 @@ body {
 
 /* ========== PRINT STYLES ========== */
 @media print {
+    @page {
+        margin: 0.5cm;
+        size: A4;
+    }
+
     html, body {
         margin: 0 !important;
         padding: 0 !important;
-        background: white !important;
-        color: black !important;
-        font-size: 10pt !important;
+        font-size: 9pt !important;
         width: 100% !important;
         height: 100% !important;
         box-sizing: border-box !important;
         overflow: visible !important;
-        page-break-before: avoid !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
-    body {
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    /* Preserve colors for print */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 
     .flex-container {
+        display: flex !important;
+        flex-direction: row !important;
         align-items: flex-start !important;
         width: 100% !important;
+        gap: 0 !important;
         box-sizing: border-box !important;
-        page-break-before: avoid !important;
     }
 
     .left-panel,
     .right-panel {
         box-sizing: border-box !important;
-        page-break-before: avoid !important;
     }
 
     .left-panel {
-        width: 70% !important;
-        padding: 5px !important;
+        width: 75% !important;
+        padding: 10px !important;
     }
 
     .right-panel {
-        width: 30% !important;
+        width: 25% !important;
+        padding: 10px !important;
         text-align: left !important;
         overflow-wrap: break-word !important;
         word-break: break-word !important;
-        padding-right: 7px !important;
     }
 
     /* Hide UI elements */
     .button,
     .select-dropdown,
     .theme-selector,
+    .theme-msg,
     .template-selector,
+    .template-msg,
+    .export-button,
     .authentication-msg {
         display: none !important;
     }
 
-    /* Fix heading size */
+    /* Name header - inherits theme colors */
     .name-msg {
-        font-size: 40pt !important;
-        color: black !important;
+        font-size: 28pt !important;
+        text-align: right !important;
+        padding: 5px 10px 5px 0 !important;
+        margin: 0 !important;
+        border-bottom: none !important;
+        width: 100% !important;
     }
 
+    /* Profile image */
     .profile-img {
-        max-width: 220px;
+        width: auto !important;
+        max-width: 120px !important;
+        height: auto !important;
+        margin-bottom: 8px !important;
     }
 
-    /* Fix heading size */
+    /* Left panel headers */
+    .summary-header,
+    .experiences-header {
+        font-size: 16pt !important;
+        font-weight: bold !important;
+        margin: 8px 0 4px 0 !important;
+        padding: 0 !important;
+    }
+
+    .experiences-role-header {
+        font-size: 12pt !important;
+        font-weight: bold !important;
+        margin: 8px 0 2px 0 !important;
+    }
+
+    .experiences-company-header {
+        font-size: 10pt !important;
+        font-weight: bold !important;
+        margin: 0 !important;
+    }
+
+    .experiences-period-header {
+        font-size: 9pt !important;
+        margin: 0 !important;
+    }
+
+    .summary-data,
+    .experiences-description-data {
+        font-size: 9pt !important;
+        padding: 0 0 0 15px !important;
+        margin: 2px 0 !important;
+    }
+
+    .summary-item,
+    .experiences-item {
+        margin: 2px 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Right panel headers */
     .profile-header,
     .certification-header,
     .skills-header,
     .achievements-header,
     .education-header {
-        font-size: 14pt;
-        color: black !important;
+        font-size: 12pt !important;
+        font-weight: bold !important;
+        margin: 10px 0 4px 0 !important;
+        padding: 0 !important;
     }
 
-    /* Fix heading alignment */
-    .summary-header,
-    .experiences-header,
-    .experiences-role-header,
-    .experiences-period-header,
-    .experiences-company-header {
-        text-align: left !important;
-        padding-right: 0 !important;
-        margin-block-end: 0 !important;
-        color: black !important;
+    .profile-header {
+        margin-top: 0 !important;
     }
 
-    /* Fix heading size */
+    /* Right panel content */
     .profile-data,
     .certification-data,
     .skills-data,
     .achievements-data,
     .education-data {
-        padding-left: 0;
-        font-size: x-small !important;
-        color: black !important;
+        font-size: 8pt !important;
+        padding: 0 !important;
+        margin: 2px 0 !important;
     }
 
-    /* Fix content size */
-    .summary-data,
-    .experiences-description-data {
-        font-size: 11pt;
-        color: black !important;
-    }
-
-    /* Prevent content splitting */
-    .summary-item,
-    .experiences-item,
+    .profile-item,
+    .certification-item,
     .skills-item,
     .achievements-item,
     .education-item {
+        margin: 3px 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Links */
+    .profile-link,
+    .certification-link {
+        font-size: 8pt !important;
+    }
+
+    /* Prevent content splitting */
+    .experiences-data {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
     }
 
-    .profile-link,
-    .certification-link {
-        color: black !important;
+    /* Ensure proper box sizing */
+    * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Theme-specific print styles */
+@media print {
+    /* Modern theme - black left panel */
+    [data-theme='modern'] .left-panel {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    [data-theme='modern'] .right-panel {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+    }
+    [data-theme='modern'] .name-msg,
+    [data-theme='modern'] .summary-header,
+    [data-theme='modern'] .experiences-header,
+    [data-theme='modern'] .experiences-role-header,
+    [data-theme='modern'] .summary-data,
+    [data-theme='modern'] .summary-item,
+    [data-theme='modern'] .experiences-description-data,
+    [data-theme='modern'] .experiences-item {
+        color: #FFFFFF !important;
+    }
+    [data-theme='modern'] .experiences-company-header,
+    [data-theme='modern'] .experiences-period-header {
+        color: #CCCCCC !important;
+    }
+
+    /* Classic theme - cream background */
+    [data-theme='classic'] .left-panel {
+        background-color: #fffef9 !important;
+        color: #1a1a1a !important;
+    }
+    [data-theme='classic'] .right-panel {
+        background-color: #f5f4ef !important;
+        color: #1a1a1a !important;
+    }
+    [data-theme='classic'] .name-msg,
+    [data-theme='classic'] .summary-header,
+    [data-theme='classic'] .experiences-header {
+        color: #8b0000 !important;
+    }
+    [data-theme='classic'] .experiences-role-header,
+    [data-theme='classic'] .summary-data,
+    [data-theme='classic'] .experiences-description-data {
+        color: #1a1a1a !important;
+    }
+    [data-theme='classic'] .experiences-company-header,
+    [data-theme='classic'] .experiences-period-header {
+        color: #4a4a4a !important;
+    }
+
+    /* Minimal theme - white background */
+    [data-theme='minimal'] .left-panel {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    [data-theme='minimal'] .right-panel {
+        background-color: #fafafa !important;
+        color: #000000 !important;
+    }
+    [data-theme='minimal'] .name-msg,
+    [data-theme='minimal'] .summary-header,
+    [data-theme='minimal'] .experiences-header,
+    [data-theme='minimal'] .experiences-role-header,
+    [data-theme='minimal'] .summary-data,
+    [data-theme='minimal'] .experiences-description-data {
+        color: #000000 !important;
+    }
+    [data-theme='minimal'] .experiences-company-header,
+    [data-theme='minimal'] .experiences-period-header {
+        color: #888888 !important;
+    }
+
+    /* Dark theme - dark background */
+    [data-theme='dark'] .left-panel {
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+    [data-theme='dark'] .right-panel {
+        background-color: #2d2d2d !important;
+        color: #ffffff !important;
+    }
+    [data-theme='dark'] .name-msg,
+    [data-theme='dark'] .summary-header,
+    [data-theme='dark'] .experiences-header {
+        color: #60a5fa !important;
+    }
+    [data-theme='dark'] .experiences-role-header,
+    [data-theme='dark'] .summary-data,
+    [data-theme='dark'] .summary-item,
+    [data-theme='dark'] .experiences-description-data,
+    [data-theme='dark'] .experiences-item {
+        color: #ffffff !important;
+    }
+    [data-theme='dark'] .experiences-company-header,
+    [data-theme='dark'] .experiences-period-header {
+        color: #b0b0b0 !important;
+    }
+    [data-theme='dark'] .profile-header,
+    [data-theme='dark'] .certification-header,
+    [data-theme='dark'] .skills-header,
+    [data-theme='dark'] .achievements-header,
+    [data-theme='dark'] .education-header {
+        color: #60a5fa !important;
+    }
+    [data-theme='dark'] .profile-data,
+    [data-theme='dark'] .certification-data,
+    [data-theme='dark'] .skills-data,
+    [data-theme='dark'] .achievements-data,
+    [data-theme='dark'] .education-data,
+    [data-theme='dark'] .profile-item,
+    [data-theme='dark'] .certification-item,
+    [data-theme='dark'] .skills-item,
+    [data-theme='dark'] .achievements-item,
+    [data-theme='dark'] .education-item {
+        color: #ffffff !important;
+    }
+    [data-theme='dark'] .profile-link,
+    [data-theme='dark'] .certification-link {
+        color: #60a5fa !important;
     }
 }

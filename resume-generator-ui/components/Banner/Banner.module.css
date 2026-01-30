@@ -1,15 +1,27 @@
 .bannerContainer {
     display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.bannerLeft {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.bannerRight {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
 }
 
 @media print {
     .bannerContainer {
         display: none !important;
     }
-}
-
-/* Apply theme override using global selectors for the outer elements, and local for the component */
-:global([data-theme='modern']) .bannerContainer {
-    justify-content: space-between;
-    width: 100%;
 }

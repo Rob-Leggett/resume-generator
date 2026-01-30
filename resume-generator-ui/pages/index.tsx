@@ -6,6 +6,7 @@ import Panel from '../components/Panel/Panel';
 import Profile from '../components/Profile/Profile';
 import ThemeChanger from '../components/ThemeChanger/ThemeChanger';
 import TemplateChanger from '../components/TemplateChanger/TemplateChanger';
+import ExportPDF from '../components/ExportPDF/ExportPDF';
 import Name from '../components/Name/Name';
 import Summary from '../components/Summary/Summary';
 import Experiences from '../components/Experiences/Experiences';
@@ -17,11 +18,20 @@ export default function Home() {
   return (
     <>
       <div className="flex-container">
-        <Banner>
-          <TemplateChanger />
-          <ThemeChanger />
-          <Authentication />
-        </Banner>
+        <Banner
+          leftContent={
+            <>
+              <TemplateChanger />
+              <ThemeChanger />
+            </>
+          }
+          rightContent={
+            <>
+              <ExportPDF />
+              <Authentication />
+            </>
+          }
+        />
       </div>
       <div className="flex-container">
         <div className="left-panel">

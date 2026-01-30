@@ -4,6 +4,12 @@
     justify-content: flex-end;
 }
 
+@media print {
+    .nameContainer {
+        justify-content: flex-start;
+    }
+}
+
 /* Apply theme override using global selectors for the outer elements, and local for the component */
 :global([data-theme='modern']) .nameContainer {
 

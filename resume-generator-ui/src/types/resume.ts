@@ -59,6 +59,7 @@ export interface ThemeDefinition {
     surface: string;
     text: string;
     textSecondary: string;
+    heading: string;
     accent: string;
     link: string;
     border: string;

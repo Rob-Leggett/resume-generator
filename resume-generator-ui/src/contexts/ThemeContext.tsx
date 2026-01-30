@@ -26,6 +26,7 @@ function injectThemeVariables(theme: ThemeDefinition) {
   root.style.setProperty('--color-surface', theme.colors.surface);
   root.style.setProperty('--color-text', theme.colors.text);
   root.style.setProperty('--color-text-secondary', theme.colors.textSecondary);
+  root.style.setProperty('--color-heading', theme.colors.heading);
   root.style.setProperty('--color-accent', theme.colors.accent);
   root.style.setProperty('--color-link', theme.colors.link);
   root.style.setProperty('--color-border', theme.colors.border);

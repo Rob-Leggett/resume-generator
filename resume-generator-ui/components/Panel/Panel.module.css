@@ -7,6 +7,8 @@
 @media print {
     .panelContainer {
         padding: 5px;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
     }
 }
 
@@ -18,4 +20,102 @@
 
 :global([data-theme='modern']) :global(.right-panel) .panelContainer {
     width: 100%;
+}
+
+/* Classic theme */
+:global([data-theme='classic']) :global(.left-panel) .panelContainer {
+    background-color: #fffef9;
+    color: #1a1a1a;
+}
+
+:global([data-theme='classic']) :global(.right-panel) .panelContainer {
+    background-color: #f5f4ef;
+    color: #1a1a1a;
+}
+
+/* Minimal theme */
+:global([data-theme='minimal']) :global(.left-panel) .panelContainer {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+:global([data-theme='minimal']) :global(.right-panel) .panelContainer {
+    background-color: #fafafa;
+    color: #000000;
+}
+
+/* Dark theme */
+:global([data-theme='dark']) :global(.left-panel) .panelContainer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+:global([data-theme='dark']) :global(.right-panel) .panelContainer {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+/* Print styles for each theme */
+@media print {
+    :global([data-theme='modern']) :global(.left-panel) .panelContainer {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    :global([data-theme='classic']) :global(.left-panel) .panelContainer {
+        background-color: #fffef9 !important;
+        color: #1a1a1a !important;
+    }
+    :global([data-theme='classic']) :global(.right-panel) .panelContainer {
+        background-color: #f5f4ef !important;
+        color: #1a1a1a !important;
+    }
+    :global([data-theme='minimal']) :global(.left-panel) .panelContainer {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
+    :global([data-theme='minimal']) :global(.right-panel) .panelContainer {
+        background-color: #fafafa !important;
+        color: #000000 !important;
+    }
+    :global([data-theme='dark']) :global(.left-panel) .panelContainer {
+        background-color: #1a1a1a !important;
+        color: #ffffff !important;
+    }
+    :global([data-theme='dark']) :global(.right-panel) .panelContainer {
+        background-color: #2d2d2d !important;
+        color: #ffffff !important;
+    }
+}
+
+/* Right panel headings - theme specific */
+:global([data-theme='modern']) :global(.right-panel) .panelContainer :global(.profile-header),
+:global([data-theme='modern']) :global(.right-panel) .panelContainer :global(.certification-header),
+:global([data-theme='modern']) :global(.right-panel) .panelContainer :global(.skills-header),
+:global([data-theme='modern']) :global(.right-panel) .panelContainer :global(.achievements-header),
+:global([data-theme='modern']) :global(.right-panel) .panelContainer :global(.education-header) {
+    color: #000000;
+}
+
+:global([data-theme='classic']) :global(.right-panel) .panelContainer :global(.profile-header),
+:global([data-theme='classic']) :global(.right-panel) .panelContainer :global(.certification-header),
+:global([data-theme='classic']) :global(.right-panel) .panelContainer :global(.skills-header),
+:global([data-theme='classic']) :global(.right-panel) .panelContainer :global(.achievements-header),
+:global([data-theme='classic']) :global(.right-panel) .panelContainer :global(.education-header) {
+    color: #8b0000;
+}
+
+:global([data-theme='minimal']) :global(.right-panel) .panelContainer :global(.profile-header),
+:global([data-theme='minimal']) :global(.right-panel) .panelContainer :global(.certification-header),
+:global([data-theme='minimal']) :global(.right-panel) .panelContainer :global(.skills-header),
+:global([data-theme='minimal']) :global(.right-panel) .panelContainer :global(.achievements-header),
+:global([data-theme='minimal']) :global(.right-panel) .panelContainer :global(.education-header) {
+    color: #000000;
+}
+
+:global([data-theme='dark']) :global(.right-panel) .panelContainer :global(.profile-header),
+:global([data-theme='dark']) :global(.right-panel) .panelContainer :global(.certification-header),
+:global([data-theme='dark']) :global(.right-panel) .panelContainer :global(.skills-header),
+:global([data-theme='dark']) :global(.right-panel) .panelContainer :global(.achievements-header),
+:global([data-theme='dark']) :global(.right-panel) .panelContainer :global(.education-header) {
+    color: #60a5fa;
 }
