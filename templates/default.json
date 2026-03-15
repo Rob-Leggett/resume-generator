@@ -16,6 +16,41 @@
   ],
   "experiences": [
     {
+      "role": "Principal Architect",
+      "period": "2025 – Present",
+      "company": "Slater and Gordon Lawyers",
+      "description": [
+        "A strategic and commercially focused leader responsible for defining and executing the enterprise technology strategy in alignment with business objectives, regulatory obligations, and long-term transformation goals.",
+        "Leads the architecture vision across Cloud, Data, AI, Core Platforms, and Integration, ensuring scalable, secure, and sustainable solutions that support growth, efficiency, and improved client outcomes.",
+        "Drives firm-wide transformation initiatives, translating complex business challenges into clear architectural options, roadmaps, and investment cases for executive and board-level decision-making.",
+        "Provides architectural leadership across key platforms including Client Intake, Pricing, Legal Cost Agreements (LCAs), Case Management, and Digital Client Experience, ensuring consistency, interoperability, and reuse.",
+        "Champions the responsible adoption of AI-enabled capabilities across the client lifecycle, balancing innovation with governance, risk, and compliance in a highly regulated legal environment.",
+        "Establishes and governs architectural principles, standards, and target states to reduce complexity, manage technical debt, and optimise long-term cost and operational sustainability.",
+        "Partners closely with the CIO, technology leaders, and senior business stakeholders to align architectural direction with strategic priorities, funding cycles, and measurable business outcomes.",
+        "Guides legacy modernisation and platform decommissioning, minimising business disruption while accelerating transition to modern, modular, and AI-ready architectures.",
+        "Acts as a trusted advisor to executives, providing clear insight into trade-offs, dependencies, delivery risk, and time-to-value.",
+        "Embeds pragmatic architecture governance into delivery, enabling speed and agility without compromising quality, security, or compliance.",
+        "Mentors and uplifts architectural capability across the organisation, fostering a strong, consistent, and future-focused practice."
+      ]
+    },
+    {
+      "role": "Technical Contractor",
+      "period": "2025",
+      "company": "Coles Group",
+      "description": [
+        "A strategic and delivery-focused technology leader with deep expertise in building scalable enterprise platforms, orchestrating distributed systems, and aligning technical execution with business outcomes in highly regulated environments.",
+        "Leads the design and delivery of distributed orchestration frameworks (Commander/Workers), ensuring resilient task execution, fan-out patterns, and secure result aggregation across PCI-sensitive workloads.",
+        "Drives modern cloud infrastructure, DevOps, and automation strategies, optimising CI/CD pipelines, containerisation, and deployment to Azure for speed, security, and cost efficiency.",
+        "Provides architectural leadership across microservices, APIs, messaging, and data integrations, delivering robust and maintainable codebases aligned to long-term strategy.",
+        "Champions platform reliability and observability, implementing proactive monitoring, logging, and incident response to maintain uptime and compliance across mission-critical systems.",
+        "Collaborates with Product and Engineering stakeholders to translate business requirements into actionable technical roadmaps, balancing innovation with stability in delivery.",
+        "Fosters high-performing engineering teams through mentorship, knowledge-sharing, and a culture of continuous improvement across DevOps, Backend, and Platform functions.",
+        "Balances innovation with governance by managing technical debt, PCI compliance boundaries, and secure development practices to protect customer data and meet audit requirements.",
+        "Provides strategic oversight for engineering operations, vendor collaboration, and infrastructure investment, ensuring optimal return on technology initiatives.",
+        "Committed to operational excellence, applying modern software engineering, security best practice, AI and cloud-native innovation to deliver sustainable growth and business value."
+      ]
+    },
+    {
       "role": "Head of Technology",
       "period": "2024 – 2025",
       "company": "TRU Recognition",
