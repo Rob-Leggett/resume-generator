@@ -282,14 +282,14 @@ body {
 /* ========== PRINT STYLES ========== */
 @media print {
     @page {
-        margin: 0.5cm;
+        margin: 0.3cm;
         size: A4;
     }
 
     html, body {
         margin: 0 !important;
         padding: 0 !important;
-        font-size: 9pt !important;
+        font-size: 7.5pt !important;
         width: 100% !important;
         height: 100% !important;
         box-sizing: border-box !important;
@@ -298,10 +298,22 @@ body {
         print-color-adjust: exact !important;
     }
 
-    /* Preserve colors for print */
+    /* Preserve colors and ensure SVG icons render */
     * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix SVG icons dropping in print */
+    svg {
+        display: inline-block !important;
+        width: 1em !important;
+        height: 1em !important;
+        vertical-align: middle !important;
+        fill: currentColor !important;
+        overflow: visible !important;
+        max-width: none !important;
     }
 
     .flex-container {
@@ -320,12 +332,12 @@ body {
 
     .left-panel {
         width: 75% !important;
-        padding: 10px !important;
+        padding: 4px 6px !important;
     }
 
     .right-panel {
         width: 25% !important;
-        padding: 10px !important;
+        padding: 4px 6px !important;
         text-align: left !important;
         overflow-wrap: break-word !important;
         word-break: break-word !important;
@@ -343,60 +355,66 @@ body {
         display: none !important;
     }
 
-    /* Name header - inherits theme colors */
+    /* Name header */
     .name-msg {
-        font-size: 28pt !important;
+        font-size: 22pt !important;
         text-align: right !important;
-        padding: 5px 10px 5px 0 !important;
+        padding: 2px 6px 2px 0 !important;
         margin: 0 !important;
         border-bottom: none !important;
         width: 100% !important;
+        line-height: 1.1 !important;
     }
 
     /* Profile image */
     .profile-img {
         width: auto !important;
-        max-width: 120px !important;
+        max-width: 90px !important;
         height: auto !important;
-        margin-bottom: 8px !important;
+        margin-bottom: 4px !important;
     }
 
     /* Left panel headers */
     .summary-header,
     .experiences-header {
-        font-size: 16pt !important;
+        font-size: 12pt !important;
         font-weight: bold !important;
-        margin: 8px 0 4px 0 !important;
+        margin: 4px 0 2px 0 !important;
         padding: 0 !important;
+        line-height: 1.2 !important;
     }
 
     .experiences-role-header {
-        font-size: 12pt !important;
+        font-size: 9pt !important;
         font-weight: bold !important;
-        margin: 8px 0 2px 0 !important;
+        margin: 4px 0 1px 0 !important;
+        line-height: 1.2 !important;
     }
 
     .experiences-company-header {
-        font-size: 10pt !important;
+        font-size: 8pt !important;
         font-weight: bold !important;
         margin: 0 !important;
+        line-height: 1.2 !important;
     }
 
     .experiences-period-header {
-        font-size: 9pt !important;
+        font-size: 7pt !important;
         margin: 0 !important;
+        line-height: 1.2 !important;
     }
 
     .summary-data,
     .experiences-description-data {
-        font-size: 9pt !important;
-        padding: 0 0 0 15px !important;
-        margin: 2px 0 !important;
+        font-size: 7pt !important;
+        padding: 0 0 0 10px !important;
+        margin: 1px 0 !important;
+        line-height: 1.3 !important;
     }
 
     .summary-item,
     .experiences-item {
-        margin: 2px 0 !important;
+        margin: 1px 0 !important;
         padding: 0 !important;
     }
 
@@ -406,10 +424,11 @@ body {
     .skills-header,
     .achievements-header,
     .education-header {
-        font-size: 12pt !important;
+        font-size: 9pt !important;
         font-weight: bold !important;
-        margin: 10px 0 4px 0 !important;
+        margin: 6px 0 2px 0 !important;
         padding: 0 !important;
+        line-height: 1.2 !important;
     }
 
     .profile-header {
@@ -422,9 +441,10 @@ body {
     .skills-data,
     .achievements-data,
     .education-data {
-        font-size: 8pt !important;
+        font-size: 6.5pt !important;
         padding: 0 !important;
-        margin: 2px 0 !important;
+        margin: 1px 0 !important;
+        line-height: 1.3 !important;
     }
 
     .profile-item,
@@ -432,26 +452,20 @@ body {
     .skills-item,
     .achievements-item,
     .education-item {
-        margin: 3px 0 !important;
+        margin: 2px 0 !important;
         padding: 0 !important;
     }
 
     /* Links */
     .profile-link,
     .certification-link {
-        font-size: 8pt !important;
+        font-size: 6.5pt !important;
     }
 
     /* Prevent content splitting */
     .experiences-data {
         break-inside: avoid !important;
         page-break-inside: avoid !important;
-    }
-
-    /* Ensure proper box sizing */
-    * {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
     }
 }
 

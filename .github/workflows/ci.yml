@@ -12,9 +12,6 @@ jobs:
   build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: resume-generator-ui
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,7 +21,6 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: 'npm'
-          cache-dependency-path: resume-generator-ui/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -55,8 +51,6 @@ jobs:
 
       - name: Install commitlint
         run: npm install --save-dev @commitlint/cli @commitlint/config-conventional
-        working-directory: resume-generator-ui
 
       - name: Validate commits
         run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }}
-        working-directory: resume-generator-ui

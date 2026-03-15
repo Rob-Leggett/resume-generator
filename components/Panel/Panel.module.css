@@ -6,7 +6,7 @@
 
 @media print {
     .panelContainer {
-        padding: 5px;
+        padding: 2px;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
     }

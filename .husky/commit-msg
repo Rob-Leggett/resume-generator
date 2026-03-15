@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-cd resume-generator-ui && npx --no -- commitlint --edit "$1"
+npx --no -- commitlint --edit "$1"
