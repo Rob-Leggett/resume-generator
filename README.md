@@ -1,42 +1,41 @@
-# 📝 resume-generator
+# resume-generator
 
-A modern, themeable, authenticated resume generator built with **Next.js**, **TypeScript**, **Auth0**, and modular React components.
+A modern, themeable, authenticated resume generator built with Next.js, TypeScript, Auth0, and modular React components.
 
-## 🌐 Overview
+## Overview
 
 This project enables authenticated users to view and manage a dynamic, printable resume interface. It includes:
 
-- **Multiple Themes** – Switch between Modern, Classic, Minimal, and Dark themes
-- **Template System** – Easily swap resume data via JSON templates
-- **Modular Sections** – Experiences, Skills, Education, Certifications, Achievements, and more
-- **User Authentication** – Profile data from Auth0 metadata
-- **Print-Ready CSS** – Per-medium customization for beautiful PDFs
-- **Semantic Versioning** – Automated releases with conventional commits
+- Multiple Themes -- Switch between Modern, Classic, Minimal, and Dark themes
+- Template System -- Swap resume data via JSON templates
+- Modular Sections -- Experiences, Skills, Education, Certifications, Achievements, and more
+- User Authentication -- Profile data sourced from Auth0 metadata
+- Print-Ready CSS -- Optimised print styles for a 2-page A4 PDF export
+- Semantic Versioning -- Automated releases with conventional commits
 
 ---
 
-## 🚀 Build & Run
+## Build and Run
 
-### 🧪 Local Development
+### Local Development
 
 Install dependencies and run in development mode:
 
 ```bash
-cd resume-generator-ui
 npm install
 npm run dev
 ```
 
 Open http://localhost:3000 in your browser.
 
-### 🏗️ Build for Production
+### Build for Production
 
 ```bash
 npm run build
 npm start
 ```
 
-### 🧪 Running Tests
+### Running Tests
 
 ```bash
 npm test                 # Run all tests
@@ -46,7 +45,7 @@ npm run test:coverage    # With coverage report
 
 ---
 
-## 🎨 Theming
+## Theming
 
 The application supports multiple themes that can be switched at runtime:
 
@@ -89,7 +88,7 @@ customTheme: {
 
 ---
 
-## 📋 Templates
+## Templates
 
 Resume data is stored in JSON templates, making it easy to create and switch between different resume versions.
 
@@ -138,9 +137,9 @@ templates/
 
 ---
 
-## 🔐 Auth0 Integration
+## Auth0 Integration
 
-The app uses @auth0/auth0-react for authentication. Configuration is handled via `src/config/constants.ts`:
+The app uses `@auth0/auth0-react` for authentication. Configuration is in `src/config/constants.ts`:
 
 ```ts
 const configuration = {
@@ -156,12 +155,12 @@ const configuration = {
 ### Setup
 
 1. Create an Auth0 account and application
-2. Set Allowed Callback URLs and Logout URLs to: `http://localhost:3000`
+2. Set Allowed Callback URLs and Logout URLs to `http://localhost:3000`
 3. Update the configuration with your Auth0 credentials
 
 ---
 
-## 📝 Commit Convention
+## Commit Convention
 
 This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated versioning.
 
@@ -201,53 +200,58 @@ docs(readme): update installation instructions
 
 ---
 
-## 🧪 Testing Print Styles in Chrome
+## PDF Export
+
+The Export PDF button uses the browser's built-in print functionality (`window.print()`). The print styles in `styles/globals.css` are optimised to produce a compact 2-page A4 PDF.
 
 To preview how your resume will appear when printed:
 
-1. Open your app in Chrome at http://localhost:3000
+1. Open the app in Chrome at http://localhost:3000
 2. Press Cmd + P (macOS) or Ctrl + P (Windows)
 3. In the print preview window:
-   - Change the destination to "Save as PDF" or your printer
+   - Set destination to "Save as PDF" or your printer
    - Set margins to "None" or "Custom"
-   - Toggle Background graphics if your theme uses background colours
+   - Enable "Background graphics" if your theme uses background colours
 
-### Testing with DevTools
+### Testing Print Styles with DevTools
 
-1. Right-click → Inspect Element
-2. Open Command Palette (Cmd + Shift + P / Ctrl + Shift + P)
-3. Type "Rendering" → Select "Show rendering"
-4. In the "Rendering" tab, under Emulate CSS media, choose `print`
+1. Right-click the page and select Inspect
+2. Open the Command Palette (Cmd + Shift + P / Ctrl + Shift + P)
+3. Type "Rendering" and select "Show rendering"
+4. Under "Emulate CSS media", choose `print`
 
 ---
 
-## 🧩 Component Structure
+## Component Structure
 
 All sections are in `components/`, structured into modular units:
 
 | Component | Purpose |
 |-----------|---------|
 | `Authentication` | Login/logout via Auth0 |
-| `Banner` | Layout header with auth + theme switcher |
+| `Banner` | Layout header with auth and theme switcher |
+| `ExportPDF` | PDF export button (browser print) |
 | `Panel` | Reusable panel container |
 | `ThemeChanger` | Dropdown for toggling themes |
 | `TemplateChanger` | Dropdown for switching templates |
+| `Name` | Displays the user's name |
 | `Summary` | Professional summary section |
 | `Experiences` | Work experience timeline |
-| `Skills` | Skills categorized by type |
-| `Education` | Educational background |
+| `Profile` | Contact information with icons |
 | `Certifications` | Professional certifications with badge links |
 | `Achievements` | Key career achievements |
-| `Profile` | Contact information with icons |
-| `Name` | Displays user's name |
-| `Icons` | Icon rendering utility |
+| `Skills` | Skills categorised by type |
+| `Education` | Educational background |
+| `Icons` | Icon rendering utility for react-icons |
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 ```
-resume-generator-ui/
+resume-generator/
+├── .github/workflows/       # CI and release workflows
+├── .husky/                  # Git hooks (lint, commitlint)
 ├── __tests__/               # Unit tests
 │   ├── components/          # Component tests
 │   ├── contexts/            # Context tests
@@ -264,31 +268,34 @@ resume-generator-ui/
 ├── themes/                  # Theme definitions
 ├── .releaserc.json          # Semantic release config
 ├── commitlint.config.js     # Commit message linting
+├── eslint.config.mjs        # ESLint configuration
 ├── jest.config.ts           # Jest configuration
+├── tsconfig.json            # TypeScript configuration
 ├── package.json
 └── README.md
 ```
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ### Core
-- `next`, `react`, `react-dom` – Framework and rendering
-- `@auth0/auth0-react` – Authentication
-- `next-themes` – Theme switching
-- `react-icons` – Icon support
+- `next`, `react`, `react-dom` -- Framework and rendering
+- `@auth0/auth0-react` -- Authentication
+- `next-themes` -- Theme switching
+- `react-icons` -- Icon support
+- `typescript` -- Type checking
 
 ### Development
-- `jest`, `@testing-library/react` – Testing
-- `semantic-release` – Automated releases
-- `@commitlint/cli` – Commit linting
-- `husky` – Git hooks
-- `typescript`, `eslint` – Type checking and linting
+- `jest`, `@testing-library/react` -- Testing
+- `semantic-release` -- Automated releases
+- `@commitlint/cli` -- Commit linting
+- `husky` -- Git hooks
+- `eslint`, `eslint-config-next` -- Linting
 
 ---
 
-## 🔄 CI/CD
+## CI/CD
 
 ### GitHub Actions Workflows
 
@@ -305,6 +312,6 @@ resume-generator-ui/
 
 ---
 
-## 📄 License
+## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License -- see [LICENSE](LICENSE) for details.
