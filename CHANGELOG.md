@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Rob-Leggett/resume-generator/compare/v1.1.1...v1.1.2) (2026-10-24)
+
+
+### Bug Fixes
+
+* **deps:** resolve all Dependabot alerts and move to Node 26 ([53f1178](https://github.com/Rob-Leggett/resume-generator/commit/53f117893933ef62aef159fdd2dd5af4a852aa65))
+
 ## [1.1.1](https://github.com/Rob-Leggett/resume-generator/compare/v1.1.0...v1.1.1) (2026-10-24)
 
 
