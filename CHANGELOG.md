@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Rob-Leggett/resume-generator/compare/v1.1.2...v1.1.3) (2026-10-24)
+
+
+### Bug Fixes
+
+* **template:** restore real employer names ([f23b864](https://github.com/Rob-Leggett/resume-generator/commit/f23b864940eea8d618112a650a3a21f859652732))
+
 ## [1.1.2](https://github.com/Rob-Leggett/resume-generator/compare/v1.1.1...v1.1.2) (2026-10-24)
 
 
