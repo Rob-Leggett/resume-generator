@@ -1,5 +1,7 @@
 # resume-generator
 
+[![CI](https://github.com/Rob-Leggett/resume-generator/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Rob-Leggett/resume-generator/actions/workflows/ci.yml) [![License](https://img.shields.io/github/license/Rob-Leggett/resume-generator)](LICENSE) [![Node.js 26](https://img.shields.io/badge/Node.js-26-5FA04E?logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![Next.js 16.4](https://img.shields.io/badge/Next.js-16.4-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/) [![React 19.3](https://img.shields.io/badge/React-19.3-61DAFB?logo=react&logoColor=white)](https://react.dev/) [![TypeScript 6.0](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
 A modern, themeable, authenticated resume generator built with Next.js, TypeScript, Auth0, and modular React components.
 
 ## Overview
