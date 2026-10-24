@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
 import { useResumeTheme } from '../../src/contexts';
+import { useHasMounted } from '../../src/hooks/useHasMounted';
 import styles from './ThemeChanger.module.css';
 
 const ThemeChanger = () => {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHasMounted();
   const { themeName, availableThemes, setTheme } = useResumeTheme();
-
-  useEffect(() => setMounted(true), []);
 
   const handleSelect = (selectedTheme: string) => {
     setTheme(selectedTheme);

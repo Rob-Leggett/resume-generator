@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react';
 import { useResumeData } from '../../src/contexts';
+import { useHasMounted } from '../../src/hooks/useHasMounted';
 import styles from './TemplateChanger.module.css';
 
 const TemplateChanger = () => {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useHasMounted();
   const { templateName, availableTemplates, setTemplate, isLoading } = useResumeData();
-
-  useEffect(() => setMounted(true), []);
 
   const handleSelect = (selectedTemplate: string) => {
     setTemplate(selectedTemplate);
