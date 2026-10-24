@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Rob-Leggett/resume-generator/compare/v1.1.0...v1.1.1) (2026-10-24)
+
+
+### Bug Fixes
+
+* **deps:** upgrade all dependencies to latest ([202a9d6](https://github.com/Rob-Leggett/resume-generator/commit/202a9d634109540ce090b58fb46a11df1cd03e21))
+
 # [1.1.0](https://github.com/Rob-Leggett/resume-generator/compare/v1.0.1...v1.1.0) (2026-10-23)
 
 
