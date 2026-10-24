@@ -2,28 +2,49 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+      - 'wiki/**'
   pull_request:
-    branches:
-      - main
+    branches: [main]
+    paths-ignore:
+      - '**/*.md'
+      - 'docs/**'
+      - 'wiki/**'
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
 
 jobs:
   build-and-test:
     name: Build and Test
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          # Full history on PRs so commitlint can walk base..head.
+          fetch-depth: ${{ github.event_name == 'pull_request' && '0' || '1' }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version-file: .nvmrc
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Lint commit messages
+        if: github.event_name == 'pull_request' && github.actor != 'dependabot[bot]'
+        run: npx commitlint --from "${{ github.event.pull_request.base.sha }}" --to "${{ github.event.pull_request.head.sha }}"
 
       - name: Lint
         run: npm run lint
@@ -34,10 +55,19 @@ jobs:
       - name: Run tests
         run: npm test
 
-  commitlint:
-    name: Lint Commit Messages
+  release:
+    name: Release
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    timeout-minutes: 10
+    concurrency:
+      group: release
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -47,10 +77,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version-file: .nvmrc
 
-      - name: Install commitlint
-        run: npm install --save-dev @commitlint/cli @commitlint/config-conventional
-
-      - name: Validate commits
-        run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }}
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run semantic-release

@@ -11,7 +11,7 @@
 ### Features
 
 * add new roles to default template ([2d1a247](https://github.com/Rob-Leggett/resume-generator/commit/2d1a2473f0254fe2b77404e37518a6ab752e9295))
-* add Slater and Gordon and Coles Group roles ([0adc6c6](https://github.com/Rob-Leggett/resume-generator/commit/0adc6c611b9cf3cf73fb0c0e2ac307f91a5fcf3b))
+* add legal-sector and Coles Group roles ([0adc6c6](https://github.com/Rob-Leggett/resume-generator/commit/0adc6c611b9cf3cf73fb0c0e2ac307f91a5fcf3b))
 
 ## [1.0.1](https://github.com/Rob-Leggett/resume-generator/compare/v1.0.0...v1.0.1) (2026-01-30)
 

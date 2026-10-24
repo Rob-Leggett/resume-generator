@@ -19,6 +19,9 @@ This project enables authenticated users to view and manage a dynamic, printable
 
 ### Local Development
 
+Requires **Node.js 26** (see `.nvmrc`; `nvm use`) and npm 11. Install scripts are
+restricted via `allowScripts` in `package.json` (none are needed; prebuilt binaries are used).
+
 Install dependencies and run in development mode:
 
 ```bash
@@ -250,7 +253,7 @@ All sections are in `components/`, structured into modular units:
 
 ```
 resume-generator/
-├── .github/workflows/       # CI and release workflows
+├── .github/workflows/       # CI workflow (build, test, release)
 ├── .husky/                  # Git hooks (lint, commitlint)
 ├── __tests__/               # Unit tests
 │   ├── components/          # Component tests
@@ -288,7 +291,7 @@ resume-generator/
 
 ### Development
 - `jest`, `@testing-library/react` -- Testing
-- `semantic-release` -- Automated releases
+- `semantic-release` -- Automated releases (run on demand via `npm run semantic-release`, which uses pinned `npx` packages so its bundled npm is not part of the project's dependency tree)
 - `@commitlint/cli` -- Commit linting
 - `husky` -- Git hooks
 - `eslint`, `eslint-config-next` -- Linting
@@ -299,16 +302,14 @@ resume-generator/
 
 ### GitHub Actions Workflows
 
-- **CI** (`ci.yml`): Runs on all PRs and pushes to main
+- **CI** (`ci.yml`): Runs on PRs and pushes to `main` (documentation-only changes are skipped;
+  superseded PR runs are cancelled; every job has a timeout)
+  - Commit message validation (PRs only)
   - Linting
   - Building
   - Testing
-  - Commit message validation (PRs only)
-
-- **Release** (`release.yml`): Runs on pushes to main
-  - Builds and tests
-  - Creates GitHub releases with changelog
-  - Updates version in package.json
+  - **Release** job (pushes to `main` only, after build and tests pass):
+    creates GitHub releases with changelog and updates the version in package.json
 
 ---
 

@@ -18,7 +18,7 @@
     {
       "role": "Principal Architect",
       "period": "2025 – Present",
-      "company": "Slater and Gordon Lawyers",
+      "company": "National Consumer Law Firm",
       "description": [
         "A strategic and commercially focused leader responsible for defining and executing the enterprise technology strategy in alignment with business objectives, regulatory obligations, and long-term transformation goals.",
         "Leads the architecture vision across Cloud, Data, AI, Core Platforms, and Integration, ensuring scalable, secure, and sustainable solutions that support growth, efficiency, and improved client outcomes.",
@@ -71,7 +71,7 @@
     {
       "role": "Lead Architect",
       "period": "2023 – 2024",
-      "company": "Papercut",
+      "company": "Global Print Management SaaS Provider",
       "description": [
         "A people-first, outcome-oriented technology leader with a strong focus on continuously optimising cloud product and architecture practices to support the delivery of high-quality, scalable, and reliable SaaS solutions.",
         "Deep experience in shaping strategic direction, influencing product engineering excellence, and aligning technical initiatives with business growth goals.",
@@ -216,7 +216,7 @@
     },
     {
       "name": "Identity Platform Transformation",
-      "description": "Replaced Auth0 with Google Identity Platform at PaperCut, enabling multi-tenant SaaS scale from thousands to millions of users."
+      "description": "Replaced Auth0 with Google Identity Platform at a global print management SaaS provider, enabling multi-tenant SaaS scale from thousands to millions of users."
     },
     {
       "name": "Cost Optimisation at Scale",
@@ -224,7 +224,7 @@
     },
     {
       "name": "Established Architecture Practice",
-      "description": "Created PaperCut's first architecture practice, setting standards, governance, and mentoring engineers to uplift architectural maturity."
+      "description": "Created the organisation's first architecture practice, setting standards, governance, and mentoring engineers to uplift architectural maturity."
     }
   ]
 }
